@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ziedProject"
+    }
+  },
+  "defaultProject": "ziedProject",
+  "cli": {
+    "analytics": "1587ad89-dc93-489c-9133-fb174046eed5"
+  }
 }
