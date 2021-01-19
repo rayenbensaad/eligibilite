@@ -11,6 +11,9 @@ import { NosoffreComponent } from './components/nosoffre/nosoffre.component';
 import { TraveauxComponent } from './components/traveaux/traveaux.component';
 import { LoaderComponent } from './loader/loader.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NosoffreComponent,
     TraveauxComponent,
     LoaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

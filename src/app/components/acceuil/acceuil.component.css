@@ -1,0 +1,18 @@
+.imageH{
+    background-image: url('../../../assets/images/houses.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+@media only screen and (max-width: 600px) {
+    .imageH{
+        background-image: url('../../../assets/images/houses.png');
+        background-size: cover;
+  }
+}
+@media only screen and (min-width: 768px) {
+    .imageH{
+        background-image: url('../../../assets/images/houses.png');
+        background-size: cover;
+  }
+}

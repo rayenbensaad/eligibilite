@@ -1,0 +1,56 @@
+.card{
+    margin-top: 100px;
+    float: right;
+    height: 750px;
+    padding: 30px;
+}
+
+
+td {
+    height: 50px;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+
+table {
+    color: black;
+    margin-top: 10px;
+    text-align:center;
+    font-weight: bold;
+    border-collapse: collapse;
+    border-radius: 10px;
+    border-style: hidden; /* hide standard table (collapsed) border */
+    box-shadow: 0 0 0 1px black; /* this draws the table border  */ 
+}
+
+input[type=text] {
+    margin-top: 10px;
+    padding-left: 25px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+select {
+    margin-top: 10px;
+    padding-left: 25px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 10px;
+  }
+
+button{
+    color: white;
+    margin-top: 10px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(37, 96, 204) , rgb(106, 189, 236));
+}
+
+
+button:hover{
+
+    background-image: linear-gradient(to right,rgb(106, 189, 236) ,rgb(37, 96, 204));
+}
+

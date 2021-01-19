@@ -1,0 +1,70 @@
+<div class="vivify popInLeft delay-150 container-fluid">
+    <div *ngIf="firstHalf" class="card col-lg-5 col-md-8 ">
+        <h4>First Half </h4>
+        <h4 style="text-align: center;margin-top:30px; color:rgb(66, 185, 66)">Apprenons à se connaitre, complétons ensemble
+            votre dossier.</h4>
+    
+        <b style="color: black;">Vous vivez en ?</b>
+        <table border="1">
+            <tr>
+                <td> <label><input type="radio" id='regular' name="optradio"> &nbsp;&nbsp;Maison individuelle</label></td>
+                <td> <label><input type="radio" id='regular' name="optradio"> &nbsp;&nbsp;Appartement</label></td>
+            </tr>
+    
+        </table>
+        <br>
+        <b style="color: black;">Nom & Prénom</b>
+        <input type="text">
+    
+        <br>
+        <b style="color: black;">Votre Département</b>
+        <select id="country" name="country">
+            <option value="au">Bekalta</option>
+            <option value="ca">Monastir</option>
+            <option value="usa">Sousse</option>
+        </select>
+    
+        <br>
+        <b style="color: black;">Votre Num Tel</b>
+        <input type="text">
+    
+        <br>
+        <button  (click)="switchSecondHalf()"> Je Demande Ma subvention </button>
+    </div>
+    
+</div>
+
+
+<!--Secon Half -->
+<div *ngIf="secondHalf"  class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+    <h4>SECOND HALFF</h4>
+    <h4 style="text-align: center;margin-top:30px; color:rgb(66, 185, 66)">Apprenons à se connaitre, complétons ensemble
+        votre dossier.</h4>
+
+    <b style="color: black;">Vous vivez en ?</b>
+    <table border="1">
+        <tr>
+            <td> <label><input type="radio" id='regular' name="optradio"> &nbsp;&nbsp;Maison individuelle</label></td>
+            <td> <label><input type="radio" id='regular' name="optradio"> &nbsp;&nbsp;Appartement</label></td>
+        </tr>
+
+    </table>
+    <br>
+    <b style="color: black;">Nom & Prénom</b>
+    <input type="text">
+
+    <br>
+    <b style="color: black;">Votre Département</b>
+    <select id="country" name="country">
+        <option value="au">Bekalta</option>
+        <option value="ca">Monastir</option>
+        <option value="usa">Sousse</option>
+    </select>
+
+    <br>
+    <b style="color: black;">Votre Num Tel</b>
+    <input type="text">
+
+    <br>
+    <button> Je Demande Ma subvention </button>
+</div>

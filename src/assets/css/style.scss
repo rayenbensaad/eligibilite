@@ -1,0 +1,122 @@
+/*
+*
+* Trunk version 1.2.2
+*
+*/
+/**
+* Template Style
+*
+* [Table of contents]
+*   1. Custom styles
+*     1.1 Main Styles
+*     1.2 Typography
+*     1.3 Backgrounds
+*     1.4 Colors
+*     1.5 Main layout
+*
+*   2. Components
+*     2.1  Preloader
+*     2.2  Backgrounds
+*     2.3  Blogs
+*     2.4  Boxes
+*     2.5  Breadcrumbs
+*     2.6  Buttons
+*     2.7  Call To Action
+*     2.8  Cards
+*     2.9  Comments
+*     2.10 Event lightbox
+*     2.11 Footers
+*     2.12 Forms
+*     2.13 Gallery Item
+*     2.14 Icons
+*     2.15 Links
+*     2.16 Lists
+*     2.17 Modals-custom
+*     2.18 Navigation
+*     2.19 Pagination-custom
+*     2.20 Panel-custom
+*     2.21 Posts
+*     2.22 Pricing
+*     2.23 Quotes
+*     2.24 Snackbars
+*     2.25 Tables
+*     2.26 Team
+*     2.27 Thumbnails
+*     2.28 Time-line
+*     2.29 Tooltip
+*     2.30 Shop
+*
+*   3. Helpers
+*     3.1 Text Alignment
+*     3.2 Footer Backgrounds
+*     3.3 Text Styling
+*     3.4 Visibility Responsive
+*     3.5 Groups
+*     3.6 Sections
+*     3.7 Offsets
+*     3.8 Builder Classmap
+*     3.9 Decorations
+*     3.10 Grid Modules
+*
+*   4. Modules
+*     4.1 Flex grid
+*     4.2 Unit-responsive
+*
+*   5 Plugins
+*     5.1  Animate
+*     5.2  Books
+*     5.3  Bg-Video
+*     5.4  Bootstrap-Material Datetimepicker
+*     5.5  Countdown
+*     5.6  Counter
+*     5.7  C3 Charts
+*     5.8  Isotope
+*     5.9  Owl Carousel
+*     5.10 Rd Navbar
+*     5.11 Rd Parallax
+*     5.12 Rd Google Map
+*     5.13 Rd Search
+*     5.14 Ui To Top
+*     5.15 Tabs
+*     5.16 Progress Bars
+*     5.17 Jquery Circle Progress
+*     5.18 Timecircles
+*     5.19 Swiper
+*     5.20 Slick
+*     5.21 Select2
+*     5.22 Scrollbar
+*     5.23 Style Switcher
+*     5.24 Lightgallery
+*     5.25 Parallax Js
+*     5.26 Jplayer
+*     5.27 Jquery.Fs.Stepper
+*     5.28 Instafeed
+*     5.29 Twitter
+*     5.30 Typed Text
+*     5.31 Mfp
+*     5.31 Way-Point
+*
+*   6. Fonts
+*     6.1 MDI
+*     6.2 FL Bigmug Line
+**/
+
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins"; 
+
+// Import color theme 
+@import "color-theme/color-theme-1";
+// Import variables
+@import "variables-custom-type-1";
+//@import "variables-custom";
+// Import mixins
+@import "mixins";
+// Import resets
+@import "reset";
+// Import resets
+@import "main-styles";
+
+
+@import "includes";
+@import "components/_layout-panel";
