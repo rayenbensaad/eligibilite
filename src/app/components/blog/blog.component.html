@@ -1,1 +1,111 @@
-<p>blog works!</p>
+<div class="fixed-top">
+  <app-navbar></app-navbar>
+</div>
+<header>
+  <section class="breadcrumbs-custom breadcrumbs-custom-svg">
+    <div class="shell">
+      <p class="breadcrumbs-custom-subtitle">Our News</p>
+      <p class="heading-1 breadcrumbs-custom-title">Masonry Blog</p>
+      <ul class="breadcrumbs-custom-path">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li class="active">Masonry Blog</li>
+      </ul>
+    </div>
+  </section>
+</header>
+
+
+
+<section class="section section-xl bg-gray-lighter">
+  <div class="container container-bigger">
+    <div class="row row-50 row-md-90 justify-content-md-center justify-content-xl-between">
+      <div class="col-md-10 col-lg-8 col-xl-7 text-center">
+        <div class="row row-30">
+          <div *ngFor="let row of articles | paginate : {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count
+            }; let i=index;" class="col-md-6 blog-masonry-column">
+            <article routerLink="/DetailBlog/{{ row.id }}" class="post-blog"><a class="post-blog-image"><img
+                  src="http://localhost:3000/uploads/{{row.picture}}" alt="" width="420" height="305" /></a>
+              <div class="post-blog-caption">
+                <div class="post-blog-caption-header">
+                  <ul class="post-blog-tags">
+                    <li><a class="button-tags" href="single-post.html">news</a></li>
+                  </ul>
+                  <ul class="post-blog-meta">
+                    <li><span>by</span>&nbsp;<a href="about-me.html"> {{row.author}} </a></li>
+                  </ul>
+                </div>
+                <div class="post-blog-caption-body">
+                  <h5><a class="post-blog-title" routerLink="/DetailBlog/{{ row.id }}">{{row.subject}} </a></h5>
+                  <p>{{row.content}} </p>
+                </div>
+                <div class="post-blog-caption-footer">
+                  <time datetime="2018"> {{row.createdAt | date:'medium'}} </time><a class="post-comment"
+                    routerLink="/DetailBlog/{{ row.id }}"><span
+                      class="icon novi-icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+         
+        </div>
+      
+        <div class="col-md-12">
+          <pagination-controls class="page-item" previousLabel="Prev" nextLabel="Next" responsive="true"
+            (pageChange)="handlePageChange($event)"></pagination-controls>
+        </div>
+        Article per Page:
+        <select (change)="handlePageSizeChange($event)">
+          <option *ngFor="let size of pageSizes" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+
+
+      </div>
+      <div class="col-md-10 col-lg-4 blog-aside">
+        <div class="blog-aside-item">
+          <h6>Search</h6>
+          <form class="rd-search rd-search-modern" action="search-results.html" method="GET">
+            <div class="form-wrap">
+              <input class="rd-search-input form-input" id="rd-search-input" type="text" name="s" autocomplete="off">
+              <label class="form-label form-label" for="rd-search-input">Search</label>
+            </div>
+            <button class="button mdi mdi-magnify" type="submit"></button>
+          </form>
+        </div>
+        <div class="blog-aside-item">
+          <h6>Archive</h6>
+          <ul class="list-marked list-marked-secondary">
+            <li><a href="#">January 2018</a></li>
+            <li><a href="#">February 2018</a></li>
+            <li><a href="#">March 2018</a></li>
+            <li><a href="#">April 2018</a></li>
+            <li><a href="#">May 2018</a></li>
+          </ul>
+        </div>
+        <div class="blog-aside-item">
+          <h6>About us</h6>
+          <p>We are centered on marketing, trading, transportation, and distribution of solar panels in the US and
+            around the world. Green Line is an environmentally friendly renewable energy company offering a broad
+            portfolio of technologies, products & solutions.</p><a class="button button-xs button-default-outline"
+            href="about-us.html">learn more</a>
+        </div>
+        <div class="blog-aside-item">
+          <h6>categories</h6>
+          <ul class="list-marked list-marked-secondary">
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Tips & Tricks</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

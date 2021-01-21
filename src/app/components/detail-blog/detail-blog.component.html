@@ -1,0 +1,22 @@
+<!-- Single post-->
+<section class="section section-lg bg-default">
+    <!-- section wave-->
+    <div class="container-wide">
+      <div class="row justify-content-sm-center">
+        <div class="col-lg-10 col-xl-8 col-xxl-6 sections-collapsable">
+          <article class="post-blog-article">
+            <ul class="post-blog-article-meta group-xl">
+              <li>
+                <div class="box-inline"><span class="icon novi-icon icon-md icon-primary mdi mdi-calendar-clock"></span>
+                  <time datetime="2018">{{currentArticle.createdAt | date:'medium'}} </time>
+                </div>
+              </li>
+            </ul>
+            <p class="big" style="text-align: center;"> {{currentArticle.subject}}</p>
+            <img src="http://localhost:3000/uploads/{{currentArticle.picture}}" alt="" width="870" height="580"/>
+            <article class="quote-primary">
+                <p>{{currentArticle.content}}</p>
+              <p class="quote-primary-meta"><span>by</span><span class="cite"> {{currentArticle.author}}</span></p>
+            </article>
+           
+          </article>

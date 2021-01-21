@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,15 @@ import { TraveauxComponent } from './components/traveaux/traveaux.component';
 import { LoaderComponent } from './loader/loader.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { DetailBlogComponent } from './components/detail-blog/detail-blog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+
+
+
 
 
 
@@ -26,11 +38,18 @@ import { QuizComponent } from './components/quiz/quiz.component';
     TraveauxComponent,
     LoaderComponent,
     NavbarComponent,
-    QuizComponent
+    QuizComponent,
+    DetailBlogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    NgbModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
