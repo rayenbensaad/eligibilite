@@ -1,1 +1,67 @@
-<p>contact works!</p>
+<div class="fixed-top">
+    <app-navbar></app-navbar>
+</div>
+<!-- Formatting forms-->
+<section style="margin-top: 50px;" class="section section-lg bg-default text-center">
+    <div  *ngIf="!submitted" class="container">
+        <div class="row justify-content-sm-center">
+            <div class="col-md-10 col-xl-8">
+                <h3>Contact us</h3>
+                <!-- RD Mailform-->
+                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact"
+                    method="post" action="bat/rd-mailform.php">
+                    <div class="row row-20">
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="forms-3-name">First name</label>
+                                <input class="form-input" id="forms-3-name" type="text" 
+                                [(ngModel)]="contact.nom_prenom"
+                                name="nom_prenom"
+                                required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="forms-3-last-name">Last name</label>
+                                <input class="form-input" id="forms-3-last-name" type="text" name="last-name"
+                                    data-constraints="@Required">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class="form-label-outside">Email</label>
+                            <div class="form-wrap form-wrap-inline">
+                                <input class="form-input" placeholder="Adresse Email" type="text" 
+                                [(ngModel)]="contact.email"
+                                name="email">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <label class="form-label-outside">Subject</label>
+                            <div  class="form-wrap form-wrap-inline">
+                                <input class="form-input" id="forms-3-state" placeholder="Subject" type="text" 
+                                [(ngModel)]="contact.subject"
+                                name="subject">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="forms-3-message">Message</label>
+                                <textarea class="form-input form-input-lg" id="forms-3-message" name="message"
+                                [(ngModel)]="contact.message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 offset-custom-1">
+                            <div class="form-button">
+                                <button class="button button-secondary" (click)="onSubmit()" type="submit">send message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:250px;" *ngIf="submitted" class="vivify spinIn">
+        <h4>You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newContact()">Add</button>
+      </div>
+</section>

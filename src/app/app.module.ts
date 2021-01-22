@@ -19,6 +19,7 @@ import { DetailBlogComponent } from './components/detail-blog/detail-blog.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -39,7 +40,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LoaderComponent,
     NavbarComponent,
     QuizComponent,
-    DetailBlogComponent
+    DetailBlogComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
