@@ -66,9 +66,10 @@
 
                     <select style="float: right;" class="horaire" id="country"
                         (change)="onChangeHoraire($event.target.value)" name="country">
-                        <option value="au">Bekalta</option>
-                        <option value="ca">Monastir</option>
-                        <option value="usa">Sousse</option>
+                        <option value="au">Entre 8h et 11h</option>
+                        <option value="ca">Entre 11h et 14h</option>
+                        <option value="usa">Entre 14h et 17h</option>
+                        <option value="usa">Entre 17h et 20h</option>
                     </select>
                 </div>
             </div>
@@ -80,7 +81,7 @@
 
             <br>
 
-            <button [disabled]="!f.form.valid" class="buttonS" (click)="switchSecondHalf(f)"> Je Demande Ma subvention
+            <button [disabled]="!f.form.valid" class="buttonS" (click)="switchSecondHalf(f)"> Ensuite
             </button>
 
         </div>
@@ -163,8 +164,8 @@
         </select>
         <br>
 
-        <button class="btn btn-success" type="submit">Add</button>
-        <button class="buttonS"> Je Demande Ma subvention </button>
+        
+        <button class="buttonS"  type="submit"> Je Demande Ma subvention </button>
     </form>
 
 
