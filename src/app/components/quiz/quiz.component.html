@@ -1,47 +1,82 @@
 <div>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="vivify popInLeft delay-150 container-fluid">
-        <div *ngIf="firstHalf" class="card col-lg-5 col-md-8 ">
+    <div class="vivify popInLeft delay-150 container-fluid">
+        <div *ngIf="firstHalf" (mouseover)="hover1Btn()" class="card col-lg-5 col-md-8 ">
             <h4>First Half </h4>
-            <h4 style="text-align: center;margin-top:30px; color:rgb(66, 185, 66)">Apprenons à se connaitre, complétons
-                ensemble
-                votre dossier.</h4>
+
+            <b style="color: black;">Dans ce logement vous etes :</b>
+            <table border="1">
+                <tr>
+                    <td> <label><input type="radio" id='regular' value="Proprietaire" name="logement"
+                                [(ngModel)]="firstStepFormulaire.logement" #logement="ngModel">
+                            &nbsp;&nbsp;Propriétaire</label></td>
+                    <td> <label><input type="radio" id='regular' value="Locataire" name="logement"
+                                [(ngModel)]="firstStepFormulaire.logement" #logement="ngModel">
+                            &nbsp;&nbsp;Locataire</label></td>
+                </tr>
+            </table>
 
             <br>
 
-            <b style="color: black;">Nom & Prénom</b>
-            <input type="text" name="userName" ngModel required #userName="ngModel">
-            <div style="color:red" *ngIf="userName.errors && (userName.dirty || userName.touched)">
-                <p *ngIf="userName.errors.required">
-                    * user Name is required
-                </p>
-            </div>
+            <b style="color: black;">Quel est votre mode de chauffage principal ?</b>
+            <table border="1">
+                <tr>
+                    <td> <label><input type="radio" id='regular' value="Electricite" name="chauffage"
+                                [(ngModel)]="firstStepFormulaire.chauffage">
+                            &nbsp;&nbsp;Electricité</label></td>
+                    <td> <label><input type="radio" id='regular' value="Gaz" name="chauffage"
+                                [(ngModel)]="firstStepFormulaire.chauffage">
+                            &nbsp;&nbsp;Gaz</label></td>
+                    <td> <label><input type="radio" id='regular' value="Fioul" name="chauffage"
+                                [(ngModel)]="firstStepFormulaire.chauffage">
+                            &nbsp;&nbsp;Fioul</label></td>
+                    <td> <label><input type="radio" id='regular' value="Autre" name="chauffage"
+                                [(ngModel)]="firstStepFormulaire.chauffage">
+                            &nbsp;&nbsp;Autre</label></td>
+                </tr>
+            </table>
+
+            <br>
+
+            <b style="color: black;">Que souhaitez-vous isoler ?</b>
+            <table border="1">
+                <tr>
+                    <td style="width: 50%;"> <label><input type="checkbox" value="ITE" id='regular' name="ITE"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;ITE-Isolation thermique extérieur</label></td>
+                    <td> <label><input type="checkbox" value="ITI" id='regular' name="ITI"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;ITI-isolation theremique intérieur</label></td>
+                </tr>
+                <tr>
+                    <td> <label><input type="checkbox" value="Sous-sol/cave" id='regular' name="Sous-sol/cave"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;Sous-sol/cave</label></td>
+
+                    <td> <label><input type="checkbox" value="Camble" id='regular' name="Camble"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;Combles perdus</label></td>
+                </tr>
+                <tr>
+
+                    <td> <label><input type="checkbox" value="Garage" id='regular' name="Garage"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;Garage</label></td>
+                    <td> <label><input type="checkbox" value="Vide Sanitaire" id='regular' name="Vide_Sanitaire"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;Vide Sanitaire</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <label><input type="checkbox" value="PAC" id='regular' name="PAC"
+                                (change)="checkValue($event)">
+                            &nbsp;&nbsp;PAC-pompe à chaleur</label></td>
 
 
-            <b style="color: black;">Code postale</b>
-            <input type="number" name="codePostale" ngModel required #codePostale="ngModel">
-            <div style="color:red" *ngIf="codePostale.errors && (codePostale.dirty || codePostale.touched)">
-                <p *ngIf="codePostale.errors.required">
-                    * code postale is required
-                </p>
-            </div>
+                </tr>
 
-            <b style="color: black;">Votre numéro de téléphone</b>
-            <input type="number" name="numTel" ngModel required #numTel="ngModel">
-            <div style="color:red" *ngIf="numTel.errors && (numTel.dirty || numTel.touched)">
-                <p *ngIf="numTel.errors.required">
-                    * Numero Telephone is required
-                </p>
-            </div>
+            </table>
 
-            <b style="color: black;">Email</b>
-            <input type="text" name="email" ngModel required #email="ngModel">
-            <div style="color:red" *ngIf="email.errors && (email.dirty || email.touched)">
-                <p *ngIf="email.errors.required">
-                    * email is required
-                </p>
-            </div>
 
-            <b style="color: black;">Date et heure de rappel</b>
+            <!-- <b style="color: black;">Date et heure de rappel</b>
 
             <div class="form-inline">
                 <div class="form-group">
@@ -77,101 +112,249 @@
                 <p *ngIf="dp.errors.required">
                     * Date is required
                 </p>
-            </div>
+            </div> -->
 
-            <br>
+           
+                <button class="buttonS" [disabled]="firstBTN" (click)="switchSecondHalf()"> Ensuite</button>
+            
 
-            <button [disabled]="!f.form.valid" class="buttonS" (click)="switchSecondHalf(f)"> Ensuite
-            </button>
-
+            
         </div>
 
-    </form>
+    </div>
 
 
     <!--Secon Half -->
-    <form (ngSubmit)="onSubmit(R)" #R="ngForm" *ngIf="secondHalf"
-        class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+    <div *ngIf="secondHalf" (mouseover)="hover2Btn()"  class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
         <h4>SECOND HALFF</h4>
 
-        <b style="color: black;">Que voulez-vous isoler ?</b>
-        <table border="1">
-            <tr>
-                <td> <label><input type="radio" value="Camble" id='regular' name="isoler" ngModel>
-                        &nbsp;&nbsp;Camble</label></td>
-                <td> <label><input type="radio" value="Rampant" id='regular' name="isoler" ngModel>
-                        &nbsp;&nbsp;Rampant</label></td>
-                <td> <label><input type="radio" value="Garage" id='regular' name="isoler" ngModel>
-                        &nbsp;&nbsp;Garage</label></td>
-            </tr>
-            <tr>
-                <td> <label><input type="radio" value="Sous-sol/cave" id='regular' name="isoler" ngModel>
-                        &nbsp;&nbsp;Sous-sol/cave</label></td>
-                <td> <label><input type="radio" value="Vide Sanitaire" id='regular' name="isoler" ngModel>
-                        &nbsp;&nbsp;Vide Sanitaire</label></td>
-                <td> <label><input type="radio" value="Mur Iterieur" id='regular' name="isoler" ngModel> &nbsp;&nbsp;Mur
-                        Iterieur</label></td>
-            </tr>
-
-        </table>
-        <br>
-        <b style="color: black;">Quelle est votre énergie de chauffage ?</b>
-        <table border="1">
-            <tr>
-                <td> <label><input type="radio" id='regular' value="Electricite" name="chauffage" ngModel>
-                        &nbsp;&nbsp;Electricité</label></td>
-                <td> <label><input type="radio" id='regular' value="Gaz" name="chauffage" ngModel>
-                        &nbsp;&nbsp;Gaz</label></td>
-                <td> <label><input type="radio" id='regular' value="Fioul" name="chauffage" ngModel>
-                        &nbsp;&nbsp;Fioul</label></td>
-                <td> <label><input type="radio" id='regular' value="Bois" name="chauffage" ngModel>
-                        &nbsp;&nbsp;Bois</label></td>
-            </tr>
-        </table>
+        <b *ngIf="isITE" style="color: black;">ITE-Isolation thermique extérieur</b>
+        <input *ngIf="isITE" type="text" placeholder="surface de votre bien" name="ITE"
+            [(ngModel)]="secondStepFormulaire.ITE" required > 
+        <!-- <div ngIf="ITE.errors.required">
+            <div  style="color:red" *ngIf="ITE.errors && (ITE.dirty || ITE.touched)">
+                <p *ngIf="ITE.errors.required">
+                    * surface de votre bien required
+                </p>
+            </div>
+        </div> -->
 
         <br>
+        <b *ngIf="isITI" style="color: black;">ITI-isolation theremique intérieur</b>
+        <input *ngIf="isITI" type="text" placeholder="surface de votre bien" name="ITI"
+            [(ngModel)]="secondStepFormulaire.ITI">
+        <!-- <div  style="color:red" *ngIf="ITI.errors && (ITI.dirty || ITI.touched)">
+            <p *ngIf="ITI.errors.required">
+                * surface de votre bien required
+            </p>
+        </div> -->
+        <br>
 
-        <b style="color: black;">Combien de personnes vivent dans le foyers ? </b>
-        <table border="1">
+        <b *ngIf="isPac" style="color: black;">PAC-pompe à chaleur</b>
+        <input *ngIf="isPac" type="text" placeholder="surface de votre bien" name="PACSurface"
+            [(ngModel)]="secondStepFormulaire.PACSurface">
+        <!-- <div style="color:red" *ngIf="PACSurfacee.errors && (PACSurface.dirty || PACSurface.touched)">
+            <p *ngIf="PACSurface.errors.required">
+                * surface de votre bien required
+            </p>
+        </div> -->
+
+        <input *ngIf="isPac" type="number" placeholder="nombre de pieces" name="PACNumber"
+            [(ngModel)]="secondStepFormulaire.PACNumber">
+        <!-- <div style="color:red" *ngIf="PACNumber.errors && (PACNumberr.dirty || PACNumber.touched)">
+            <p *ngIf="PACNumber.errors.required">
+                * nombre de pieces: required
+            </p>
+        </div> -->
+
+        <b *ngIf="isComble" style="color: black;">Vos combles sont-il aménagé ?</b>
+        <table *ngIf="isComble" border="1">
             <tr>
-                <td> <label><input type="radio" id='regular' value="1" name="personnes" ngModel> &nbsp;&nbsp;1</label>
-                </td>
-                <td> <label><input type="radio" id='regular' value="2" name="personnes" ngModel> &nbsp;&nbsp;2</label>
-                </td>
-                <td> <label><input type="radio" id='regular' value="3" name="personnes" ngModel> &nbsp;&nbsp;3</label>
-                </td>
-                <td> <label><input type="radio" id='regular' value="4" name="personnes" ngModel> &nbsp;&nbsp;4</label>
-                </td>
-                <td> <label><input type="radio" id='regular' value="5" name="personnes" ngModel> &nbsp;&nbsp;5</label>
-                </td>
-                <td> <label><input type="radio" id='regular' value="+6" name="personnes" ngModel> &nbsp;+6</label></td>
+                <td> <label><input type="radio" id='regular' value="Oui" name="combles"
+                            [(ngModel)]="secondStepFormulaire.combles">
+                        &nbsp;&nbsp;Oui</label></td>
+                <td> <label><input type="radio" id='regular' value="Non" name="combles"
+                            [(ngModel)]="secondStepFormulaire.combles">
+                        &nbsp;&nbsp;Non</label></td>
             </tr>
         </table>
-        <b style="color: black;">Quel est votre revenu annuel ?</b>
-        <select id="country" name="Revenu annuel" (change)="onChangeRevenu($event.target.value)">
-            <option value="au">Moins de 19 000 €</option>
-            <option value="ca">Entre 19 000 € et 28 000 €</option>
-            <option value="usa">Entre 28 000 € et 34 000 €</option>
-            <option value="usa">Plus de 34 000 €</option>
+        <input *ngIf="isComble" type="text" placeholder="Surface de vos combles" name="comblesSurface"
+            [(ngModel)]="secondStepFormulaire.comblesSurface">
+        <!-- <div  style="color:red" *ngIf="comblesSurface.errors && (comblesSurface.dirty || comblesSurface.touched)">
+            <p *ngIf="comblesSurface.errors.required">
+                * surface de vos combles required
+            </p>
+        </div> -->
+
+        <p *ngIf="isCave"> Surface de votre cave / sous sol :</p>
+        <select *ngIf="isCave" id="surfaceCave" name="surfaceCave" (change)="onSurfaceCave($event.target.value)">
+            <option value="" disabled>surface de votre cave / sous sol</option>
+            <option value="moins de 35m2">moins de 35m2</option>
+            <option value="entre 35 et 50m2">entre 35 et 50m2</option>
+            <option value="supérieur à 50m2">supérieur à 50m2</option>
         </select>
 
-        <b style="color: black;">Quelle est la surface à isoler ?</b>
-        <select id="country" name="Surface" (change)="onChangeSurface($event.target.value)">
-            <option value="au">Moins de 50 m²</option>
-            <option value="ca">Entre 50 m² et 100 m²</option>
-            <option value="usa">Entre 100 m² et 200 m²</option>
-            <option value="usa">Plus de 200 m²</option>
+        <p *ngIf="isGarage"> Surface Garages :</p>
+        <select *ngIf="isGarage" id="surfaceGarage" name="surfaceGarage"
+            (change)="onSurfaceGarages($event.target.value)">
+            <option value="" disabled>Surface Garages</option>
+            <option value="moins de 30m2">moins de 30m2</option>
+            <option value="entre 30m2 et 50m2">entre 30m2 et 50m2</option>
+            <option value="supérieur à 50m2">supérieur à 50m2</option>
         </select>
+
+        <p *ngIf="isSanitaire"> Surface du vide sanitaire :</p>
+        <select *ngIf="isSanitaire" id="surfaceVideSanitaire" name="surfaceVideSanitaire"
+            (change)="onSurfaceVideSanitaire($event.target.value)">
+            <option value="" disabled>Surface du vide sanitaire</option>
+            <option value="moins de 30m2">moins de 30m2</option>
+            <option value="entre 30m2 et 50m2">entre 30m2 et 50m2</option>
+            <option value="supérieur à 50m2">supérieur à 50m2</option>
+        </select>
+
+        <b style="color: black;"> hauteur sous plafond de Vide sanitaire en cm</b>
+        <input type="number" placeholder="hauteur vide sanitaire" name="hauteur_vide_sanitaire"
+            [(ngModel)]="secondStepFormulaire.hauteur_vide_sanitaire">
+
+        <b style="color: black;">Votre maison est situé </b>
+        <table border="1">
+            <tr>
+                <td> <label><input type="radio" id='regular' value="ile de france" name="situe"
+                            [(ngModel)]="secondStepFormulaire.situe">
+                        &nbsp;&nbsp;ile de france </label></td>
+                <td> <label><input type="radio" id='regular' value="autre region" name="situe"
+                            [(ngModel)]="secondStepFormulaire.situe">
+                        &nbsp;&nbsp;autre region</label></td>
+            </tr>
+        </table>
+
+        <b style="color: black;">Nombre d'habitants du logement à titre de résidence principale ? </b>
+        <table border="1">
+            <tr>
+                <td> <label><input type="radio" id='regular' value="1" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;1</label>
+                </td>
+                <td> <label><input type="radio" id='regular' value="2" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;2</label>
+                </td>
+                <td> <label><input type="radio" id='regular' value="3" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;3</label>
+                </td>
+                <td> <label><input type="radio" id='regular' value="4" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;4</label>
+                </td>
+                <td> <label><input type="radio" id='regular' value="5" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;5</label>
+                </td>
+                <td> <label><input type="radio" id='regular' value="+6" name="personnes"
+                            [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;+6</label></td>
+            </tr>
+        </table>
+
+
+        <b style="color: black;">Votre revenu fiscal de référence sur l'année 2019 ou 2020 ?</b>
+
+        <select *ngIf="secondStepFormulaire.personnes==='1'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 14 879">moins de 14 879 €</option>
+            <option value="entre 14879 et 19074">entre 14879 et 19074 €</option>
+            <option value="plus de 19074">plus de 19074 €</option>
+        </select>
+
+        <select *ngIf="secondStepFormulaire.personnes==='2'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 21760">moins de 21760 €</option>
+            <option value="entre 21760 et 27896">entre 21760 et 27896 €</option>
+            <option value="plus de 27896">plus de 27896 €</option>
+        </select>
+
+        <select *ngIf="secondStepFormulaire.personnes==='3'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 26170">moins de 26170 €</option>
+            <option value="entre  26170 et 33547">entre 26170 et 33547 €</option>
+            <option value="plus de 33547">plus de 33547 €</option>
+        </select>
+
+        <select *ngIf="secondStepFormulaire.personnes==='4'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 30572">moins de 30572 €</option>
+            <option value="entre  30572 et 39192">entre 30572 et 39192 €</option>
+            <option value="plus de 39192">plus de 39192 €</option>
+        </select>
+
+        <select *ngIf="secondStepFormulaire.personnes==='5'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 34993">moins de 34993 €</option>
+            <option value="entre 34993 et 44860">entre 34993 et 44860 €</option>
+            <option value="plus de 44860">plus de 44860 €</option>
+        </select>
+
+        <select *ngIf="secondStepFormulaire.personnes==='+6'" id="Revenu" name="Revenu annuel"
+        (change)="onChangeRevenu($event.target.value)">
+            <option value="moins de 39405">moins de 39405 €</option>
+            <option value="entre 39405 et 50511">entre 39405 et 50511 €</option>
+            <option value="plus de 50511">plus de 50511 €</option>
+        </select>
+
         <br>
 
-        
-        <button class="buttonS"  type="submit"> Je Demande Ma subvention </button>
-    </form>
+
+        <button class="buttonS" [disabled]="SecondBTN" (click)='switchThirdStep()'> Je Demande Ma subvention </button>
+    </div>
 
 
     <!--Third Half -->
-    <div  *ngIf="thirdHalf" style="justify-content:center"
-        class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
-        <h1 style="text-align: center; color:green;"> Success </h1>
+    <div *ngIf="thirdHalf" style="justify-content:center" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+        <b style="color: black;">Où seront réalisés les travaux d'isolation?</b>
+        <input type="number" placeholder="code postale" name="codePostale"
+            [(ngModel)]="thirdStepFormulaire.codePostale">
+        <!-- <div style="color:red" *ngIf="codePostale.errors && (codePostale.dirty || codePostale.touched)">
+            <p *ngIf="codePostale.errors.required">
+                * code postale is required
+            </p>
+        </div> -->
+
+        <input type="text" placeholder="Commune" name="commune" [(ngModel)]="thirdStepFormulaire.commune">
+        <!-- <div style="color:red" *ngIf="commune.errors && (commune.dirty || commune.touched)">
+            <p *ngIf="commune.errors.required">
+                * Commune is required
+            </p>
+        </div> -->
+
+        <b style="color: black;">Nom & Prénom</b>
+        <input type="text" name="nom_prenom" [(ngModel)]="thirdStepFormulaire.nom_prenom">
+        <!-- <div style="color:red" *ngIf="userName.errors && (userName.dirty || userName.touched)">
+            <p *ngIf="userName.errors.required">
+                * user Name is required
+            </p>
+        </div> -->
+
+
+
+        <b style="color: black;">Votre numéro de téléphone</b>
+        <input type="number" name="numTel" [(ngModel)]="thirdStepFormulaire.numTel">
+        <!-- <div style="color:red" *ngIf="numTel.errors && (numTel.dirty || numTel.touched)">
+            <p *ngIf="numTel.errors.required">
+                * Numero Telephone is required
+            </p>
+        </div> -->
+
+        <b style="color: black;">Email</b>
+        <input type="text" name="email" [(ngModel)]="thirdStepFormulaire.email">
+        <!-- <div style="color:red" *ngIf="email.errors && (email.dirty || email.touched)">
+            <p *ngIf="email.errors.required">
+                * email is required
+            </p>
+        </div> -->
+
+        <button class="buttonS" (click)='switchLastStep()'> submit </button>
+
+    </div>
+
+    <!-- last Step -->
+    <div *ngIf="lastStep" style="justify-content:center" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+
+        <h1>Un conseiller ARE vous contactera sous 48H
+            pour vous accompagner dans votre projet</h1>
     </div>
 </div>

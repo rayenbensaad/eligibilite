@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'blog',component: BlogComponent},
   {path: 'DetailBlog/:id',component: DetailBlogComponent},
   {path: 'contact',component: ContactComponent},
-  { path: '',   redirectTo: '/acceuil', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 
 ]
