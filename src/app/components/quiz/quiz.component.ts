@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Form } from 'src/app/models/Form';
 import { FormService } from 'src/app/services/form.service';
@@ -16,6 +16,7 @@ export class QuizComponent implements OnInit {
   firstHalf = true;
   thirdHalf = false;
   lastStep = false;
+  point=false;
 
   model: NgbDateStruct;
   horaire;
@@ -78,7 +79,7 @@ export class QuizComponent implements OnInit {
     codePostale: '',
     commune: '',
     nom_prenom: '',
-    numTel: '',
+    numTel: '0',
     email: '',
   };
 
@@ -90,11 +91,20 @@ export class QuizComponent implements OnInit {
   isSanitaire = false;
   isPac = false;
 
+  sizeCard=false;
+  codePstalSaisie=false;
+
+ 
 
   constructor(private formService: FormService) { }
 
   ngOnInit(): void {
 
+  }
+  clickPoint(){
+    
+    this.point= true;
+    console.log(this.firstStepFormulaire.logement)
   }
   hover1Btn() {
     if (this.firstStepFormulaire.logement !== '' && this.firstStepFormulaire.chauffage !== '' && this.firstStepFormulaire.isole.length !== 0) {
@@ -103,6 +113,7 @@ export class QuizComponent implements OnInit {
     }
 
   }
+  
   switchSecondHalf() {
 
 
@@ -145,10 +156,24 @@ export class QuizComponent implements OnInit {
       )
 
     }
+    if(this.firstStepFormulaire.isole.length>2){
+      this.sizeCard=true;
+      console.log(this.sizeCard)
+    }
+  }
+
+  hoverThirdStep(){
+    console.log(this.codePstalSaisie)
+    console.log(parseInt(this.thirdStepFormulaire.codePostale))
+    if(parseInt(this.thirdStepFormulaire.codePostale)<10000 && parseInt(this.thirdStepFormulaire.codePostale)>99999 &&  this.thirdStepFormulaire.codePostale != null)
+    {
+      this.codePstalSaisie= true;
+    }
+    console.log(this.codePstalSaisie)
   }
 
   hover2Btn() {
-    console.log(this.SecondBTN)
+    //console.log(this.SecondBTN)
     if ((this.isITE === true && this.secondStepFormulaire.ITE !== '') ||
       (this.isITI === true && this.secondStepFormulaire.ITI !== '') ||
       (this.isCave === true && this.secondStepFormulaire.surfaceCave !== '') ||
@@ -160,10 +185,13 @@ export class QuizComponent implements OnInit {
 
     ) {
       this.SecondBTN = false;
-      console.log(this.SecondBTN)
+      //console.log(this.SecondBTN)
     }
+   
 
   }
+
+  
 
   switchThirdStep() {
 
@@ -184,15 +212,10 @@ export class QuizComponent implements OnInit {
 
     console.log(this.firstStepFormulaire.isole)
 
-
-
   }
   switchLastStep() {
     console.log(this.thirdStepFormulaire)
-    this.secondHalf = false;
-    this.firstHalf = false;
-    this.thirdHalf = false;
-    this.lastStep = true;
+   
 
     this.fullForm = {
       logement: this.firstStepFormulaire.logement,
@@ -224,7 +247,9 @@ export class QuizComponent implements OnInit {
         response => {
           console.log(response);
           this.secondHalf = false;
-          this.thirdHalf = true;
+          this.firstHalf = false;
+          this.thirdHalf = false;
+          this.lastStep = true;
         },
         error => {
           console.log(error);

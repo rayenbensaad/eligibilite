@@ -1,10 +1,43 @@
 .card{
     margin-top: 100px;
     float: right;
-    height: 750px;
+    height: auto;
     padding: 30px;
 }
+.cardd{
+    height: 1150px !important;
+}
+/* .Round1InnerShadow {
+  
+    box-shadow: inset 0px 0px 21pt 10pt rgba(61,59,61,0.48);
+    border: 1pt solid transparent;
+     border-radius: 20px;
+} */
 
+table > tr >td:hover > label > .point {
+    width: 120px;
+    background: #6393ec;
+  }
+
+
+.pointed {
+    height: 6px;
+    width: 120px;
+    background: #6393ec;
+    transition: width 2s ease;
+  }
+.point {
+    width: 1px;
+    height: 6px;
+    background: white;
+    transition: width 2s ease;
+  }
+  
+
+
+input[type=radio] {
+    visibility: hidden;
+}
 
 td {
     height: 50px;
@@ -53,7 +86,7 @@ select {
     height: 60px;
     border: none;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgb(37, 96, 204) , rgb(106, 189, 236));
+    background-image: linear-gradient(to right, rgb(99, 147, 236), rgb(106, 189, 236));
 }
 
 
@@ -94,3 +127,6 @@ select {
     }
   
   }
+b {
+    text-align: center;
+}

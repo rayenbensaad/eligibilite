@@ -1,17 +1,31 @@
 <div>
     <div class="vivify popInLeft delay-150 container-fluid">
         <div *ngIf="firstHalf" (mouseover)="hover1Btn()" class="card col-lg-5 col-md-8 ">
-            <h4>First Half </h4>
-
+            <h3 style="color:rgb(37, 96, 204) ; text-align: center;">Bienvenue sur notre formulaire, nous allons tester
+                ensemble votre éligibilité</h3>
+            <br>
+            <h5 style="text-align: right;">Etape 1 </h5>
+            <br>
             <b style="color: black;">Dans ce logement vous etes :</b>
             <table border="1">
                 <tr>
-                    <td> <label><input type="radio" id='regular' value="Proprietaire" name="logement"
+                    <td (click)=" clickPoint()"> <label >
+                        <svg style="color: green;" *ngIf='firstStepFormulaire.logement =="Proprietaire" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>  <input type="radio" id='regular' value="Proprietaire" name="logement"
                                 [(ngModel)]="firstStepFormulaire.logement" #logement="ngModel">
-                            &nbsp;&nbsp;Propriétaire</label></td>
-                    <td> <label><input type="radio" id='regular' value="Locataire" name="logement"
+                          Propriétaire <div class="point"></div> 
+                         
+                         </label>
+                      </td>
+                    <td> <label>
+                        <svg style="color: green;" *ngIf='firstStepFormulaire.logement =="Locataire" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg><input type="radio" id='regular' value="Locataire" name="logement"
                                 [(ngModel)]="firstStepFormulaire.logement" #logement="ngModel">
-                            &nbsp;&nbsp;Locataire</label></td>
+                           Locataire <div class="point"></div></label></td>
                 </tr>
             </table>
 
@@ -20,18 +34,42 @@
             <b style="color: black;">Quel est votre mode de chauffage principal ?</b>
             <table border="1">
                 <tr>
-                    <td> <label><input type="radio" id='regular' value="Electricite" name="chauffage"
+                    <td> <label>
+                        <svg style="color: green; margin-top: -50px;" *ngIf='firstStepFormulaire.chauffage =="Electricite" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>
+                          <input type="radio" id='regular' value="Electricite" name="chauffage"
                                 [(ngModel)]="firstStepFormulaire.chauffage">
-                            &nbsp;&nbsp;Electricité</label></td>
-                    <td> <label><input type="radio" id='regular' value="Gaz" name="chauffage"
+                                <img src="../../../assets/images/electricity.png" alt="" width="50" height="49"/>
+                                <div class="point"></div></label></td>
+                    <td> <label>
+                        <svg style="color: green; margin-top: -50px;" *ngIf='firstStepFormulaire.chauffage =="Gaz" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>
+                          <input type="radio" id='regular' value="Gaz" name="chauffage"
                                 [(ngModel)]="firstStepFormulaire.chauffage">
-                            &nbsp;&nbsp;Gaz</label></td>
-                    <td> <label><input type="radio" id='regular' value="Fioul" name="chauffage"
+                                <img src="../../../assets/images/chaleur.png" alt="" width="50" height="49"/>
+                                <div class="point"></div></label></td>
+                    <td> <label>
+                        <svg style="color: green; margin-top: -50px;" *ngIf='firstStepFormulaire.chauffage =="Fioul" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>
+                          <input type="radio" id='regular' value="Fioul" name="chauffage"
                                 [(ngModel)]="firstStepFormulaire.chauffage">
-                            &nbsp;&nbsp;Fioul</label></td>
-                    <td> <label><input type="radio" id='regular' value="Autre" name="chauffage"
+                                <img src="../../../assets/images/water.png" alt="" width="50" height="49"/>
+                                <div class="point"></div></label></td>
+                    <td> <label>
+                        <svg style="color: green; margin-top: -50px;" *ngIf='firstStepFormulaire.chauffage =="Autre" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>
+                          <input type="radio" id='regular' value="Autre" name="chauffage"
                                 [(ngModel)]="firstStepFormulaire.chauffage">
-                            &nbsp;&nbsp;Autre</label></td>
+                                <img src="../../../assets/images/plus.png" alt="" width="50" height="49"/>
+                                 <div class="point"></div></label></td>
                 </tr>
             </table>
 
@@ -114,23 +152,24 @@
                 </p>
             </div> -->
 
-           
-                <button class="buttonS" [disabled]="firstBTN" (click)="switchSecondHalf()"> Ensuite</button>
-            
 
-            
+            <button class="buttonS" [disabled]="firstBTN" (click)="switchSecondHalf()"> Ensuite</button>
+
+
+
         </div>
 
     </div>
 
 
     <!--Secon Half -->
-    <div *ngIf="secondHalf" (mouseover)="hover2Btn()"  class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
-        <h4>SECOND HALFF</h4>
-
+    <div *ngIf="secondHalf" (mouseover)="hover2Btn()" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8"
+        [ngClass]="{'cardd': firstStepFormulaire.isole.length>2}">
+        <h5 style="text-align: right;">Etape 2</h5>
+        <br>
         <b *ngIf="isITE" style="color: black;">ITE-Isolation thermique extérieur</b>
         <input *ngIf="isITE" type="text" placeholder="surface de votre bien" name="ITE"
-            [(ngModel)]="secondStepFormulaire.ITE" required > 
+            [(ngModel)]="secondStepFormulaire.ITE" required>
         <!-- <div ngIf="ITE.errors.required">
             <div  style="color:red" *ngIf="ITE.errors && (ITE.dirty || ITE.touched)">
                 <p *ngIf="ITE.errors.required">
@@ -138,8 +177,8 @@
                 </p>
             </div>
         </div> -->
+        <br *ngIf="isITE">
 
-        <br>
         <b *ngIf="isITI" style="color: black;">ITI-isolation theremique intérieur</b>
         <input *ngIf="isITI" type="text" placeholder="surface de votre bien" name="ITI"
             [(ngModel)]="secondStepFormulaire.ITI">
@@ -148,7 +187,7 @@
                 * surface de votre bien required
             </p>
         </div> -->
-        <br>
+        <br *ngIf="isITI">
 
         <b *ngIf="isPac" style="color: black;">PAC-pompe à chaleur</b>
         <input *ngIf="isPac" type="text" placeholder="surface de votre bien" name="PACSurface"
@@ -166,18 +205,30 @@
                 * nombre de pieces: required
             </p>
         </div> -->
+        <br *ngIf="isPac">
 
         <b *ngIf="isComble" style="color: black;">Vos combles sont-il aménagé ?</b>
         <table *ngIf="isComble" border="1">
             <tr>
-                <td> <label><input type="radio" id='regular' value="Oui" name="combles"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.combles =="Oui" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="Oui" name="combles"
                             [(ngModel)]="secondStepFormulaire.combles">
                         &nbsp;&nbsp;Oui</label></td>
-                <td> <label><input type="radio" id='regular' value="Non" name="combles"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.combles =="Non" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="Non" name="combles"
                             [(ngModel)]="secondStepFormulaire.combles">
                         &nbsp;&nbsp;Non</label></td>
             </tr>
         </table>
+
         <input *ngIf="isComble" type="text" placeholder="Surface de vos combles" name="comblesSurface"
             [(ngModel)]="secondStepFormulaire.comblesSurface">
         <!-- <div  style="color:red" *ngIf="comblesSurface.errors && (comblesSurface.dirty || comblesSurface.touched)">
@@ -185,16 +236,18 @@
                 * surface de vos combles required
             </p>
         </div> -->
+        <br *ngIf="isComble">
 
-        <p *ngIf="isCave"> Surface de votre cave / sous sol :</p>
+        <b *ngIf="isCave"> Surface de votre cave / sous sol :</b>
         <select *ngIf="isCave" id="surfaceCave" name="surfaceCave" (change)="onSurfaceCave($event.target.value)">
             <option value="" disabled>surface de votre cave / sous sol</option>
             <option value="moins de 35m2">moins de 35m2</option>
             <option value="entre 35 et 50m2">entre 35 et 50m2</option>
             <option value="supérieur à 50m2">supérieur à 50m2</option>
         </select>
+        <br *ngIf="isCave">
 
-        <p *ngIf="isGarage"> Surface Garages :</p>
+        <b *ngIf="isGarage"> Surface Garages :</b>
         <select *ngIf="isGarage" id="surfaceGarage" name="surfaceGarage"
             (change)="onSurfaceGarages($event.target.value)">
             <option value="" disabled>Surface Garages</option>
@@ -202,8 +255,9 @@
             <option value="entre 30m2 et 50m2">entre 30m2 et 50m2</option>
             <option value="supérieur à 50m2">supérieur à 50m2</option>
         </select>
+        <br *ngIf="isGarage">
 
-        <p *ngIf="isSanitaire"> Surface du vide sanitaire :</p>
+        <b *ngIf="isSanitaire"> Surface du vide sanitaire :</b>
         <select *ngIf="isSanitaire" id="surfaceVideSanitaire" name="surfaceVideSanitaire"
             (change)="onSurfaceVideSanitaire($event.target.value)">
             <option value="" disabled>Surface du vide sanitaire</option>
@@ -212,85 +266,129 @@
             <option value="supérieur à 50m2">supérieur à 50m2</option>
         </select>
 
-        <b style="color: black;"> hauteur sous plafond de Vide sanitaire en cm</b>
-        <input type="number" placeholder="hauteur vide sanitaire" name="hauteur_vide_sanitaire"
+        <b *ngIf="isSanitaire" style="color: black;"> hauteur sous plafond de Vide sanitaire en cm:</b>
+        <input *ngIf="isSanitaire" type="number" placeholder="hauteur vide sanitaire" name="hauteur_vide_sanitaire"
             [(ngModel)]="secondStepFormulaire.hauteur_vide_sanitaire">
 
-        <b style="color: black;">Votre maison est situé </b>
+        <br *ngIf="isSanitaire">
+
+        <b style="color: black;">Votre maison est située à: </b>
         <table border="1">
             <tr>
-                <td> <label><input type="radio" id='regular' value="ile de france" name="situe"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.situe =="ile de france" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="ile de france" name="situe"
                             [(ngModel)]="secondStepFormulaire.situe">
                         &nbsp;&nbsp;ile de france </label></td>
-                <td> <label><input type="radio" id='regular' value="autre region" name="situe"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.situe =="autre region" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg><input type="radio" id='regular' value="autre region" name="situe"
+
                             [(ngModel)]="secondStepFormulaire.situe">
                         &nbsp;&nbsp;autre region</label></td>
             </tr>
         </table>
+        <br>
 
         <b style="color: black;">Nombre d'habitants du logement à titre de résidence principale ? </b>
         <table border="1">
             <tr>
-                <td> <label><input type="radio" id='regular' value="1" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="1" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="1" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;1</label>
                 </td>
-                <td> <label><input type="radio" id='regular' value="2" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="2" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="2" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;2</label>
                 </td>
-                <td> <label><input type="radio" id='regular' value="3" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="3" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="3" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;3</label>
                 </td>
-                <td> <label><input type="radio" id='regular' value="4" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="4" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="4" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;4</label>
                 </td>
-                <td> <label><input type="radio" id='regular' value="5" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="5" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="5" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;&nbsp;5</label>
                 </td>
-                <td> <label><input type="radio" id='regular' value="+6" name="personnes"
+                <td> <label>
+                    <svg style="color: green;" *ngIf='secondStepFormulaire.personnes =="+6" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                      <input type="radio" id='regular' value="+6" name="personnes"
                             [(ngModel)]="secondStepFormulaire.personnes"> &nbsp;+6</label></td>
             </tr>
         </table>
+        <br>
 
 
         <b style="color: black;">Votre revenu fiscal de référence sur l'année 2019 ou 2020 ?</b>
 
         <select *ngIf="secondStepFormulaire.personnes==='1'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 14 879">moins de 14 879 €</option>
             <option value="entre 14879 et 19074">entre 14879 et 19074 €</option>
             <option value="plus de 19074">plus de 19074 €</option>
         </select>
 
         <select *ngIf="secondStepFormulaire.personnes==='2'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 21760">moins de 21760 €</option>
             <option value="entre 21760 et 27896">entre 21760 et 27896 €</option>
             <option value="plus de 27896">plus de 27896 €</option>
         </select>
 
         <select *ngIf="secondStepFormulaire.personnes==='3'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 26170">moins de 26170 €</option>
             <option value="entre  26170 et 33547">entre 26170 et 33547 €</option>
             <option value="plus de 33547">plus de 33547 €</option>
         </select>
 
         <select *ngIf="secondStepFormulaire.personnes==='4'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 30572">moins de 30572 €</option>
             <option value="entre  30572 et 39192">entre 30572 et 39192 €</option>
             <option value="plus de 39192">plus de 39192 €</option>
         </select>
 
         <select *ngIf="secondStepFormulaire.personnes==='5'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 34993">moins de 34993 €</option>
             <option value="entre 34993 et 44860">entre 34993 et 44860 €</option>
             <option value="plus de 44860">plus de 44860 €</option>
         </select>
 
         <select *ngIf="secondStepFormulaire.personnes==='+6'" id="Revenu" name="Revenu annuel"
-        (change)="onChangeRevenu($event.target.value)">
+            (change)="onChangeRevenu($event.target.value)">
             <option value="moins de 39405">moins de 39405 €</option>
             <option value="entre 39405 et 50511">entre 39405 et 50511 €</option>
             <option value="plus de 50511">plus de 50511 €</option>
@@ -299,21 +397,25 @@
         <br>
 
 
-        <button class="buttonS" [disabled]="SecondBTN" (click)='switchThirdStep()'> Je Demande Ma subvention </button>
+        <button class="buttonS" [disabled]="SecondBTN" (click)='switchThirdStep()'> Ensuite </button>
     </div>
 
 
     <!--Third Half -->
-    <div *ngIf="thirdHalf" style="justify-content:center" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
-        <b style="color: black;">Où seront réalisés les travaux d'isolation?</b>
-        <input type="number" placeholder="code postale" name="codePostale"
-            [(ngModel)]="thirdStepFormulaire.codePostale">
-        <!-- <div style="color:red" *ngIf="codePostale.errors && (codePostale.dirty || codePostale.touched)">
-            <p *ngIf="codePostale.errors.required">
-                * code postale is required
-            </p>
-        </div> -->
+    <div *ngIf="thirdHalf" (mouseover)="hoverThirdStep()" style="justify-content:center" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+        <h5 style="text-align: right;">Etape 3</h5>
+        <br>
 
+        <b style="color: black;">Où seront réalisés les travaux d'isolation?</b>
+        <input placeholder="code postal" name="codePostale"
+            [(ngModel)]="thirdStepFormulaire.codePostale">
+        <div style="color:red" *ngIf="thirdStepFormulaire.codePostale.length !== 5 && thirdStepFormulaire.codePostale !== ''">
+            <p >
+                * code postale est incorrect
+                
+            </p>
+        </div>
+        
         <input type="text" placeholder="Commune" name="commune" [(ngModel)]="thirdStepFormulaire.commune">
         <!-- <div style="color:red" *ngIf="commune.errors && (commune.dirty || commune.touched)">
             <p *ngIf="commune.errors.required">
@@ -321,8 +423,8 @@
             </p>
         </div> -->
 
-        <b style="color: black;">Nom & Prénom</b>
-        <input type="text" name="nom_prenom" [(ngModel)]="thirdStepFormulaire.nom_prenom">
+        <b style="color: black;">Nom & Prénom:</b>
+        <input type="text" name="nom_prenom" placeholder="Nom & Prénom" [(ngModel)]="thirdStepFormulaire.nom_prenom">
         <!-- <div style="color:red" *ngIf="userName.errors && (userName.dirty || userName.touched)">
             <p *ngIf="userName.errors.required">
                 * user Name is required
@@ -331,30 +433,41 @@
 
 
 
-        <b style="color: black;">Votre numéro de téléphone</b>
-        <input type="number" name="numTel" [(ngModel)]="thirdStepFormulaire.numTel">
-        <!-- <div style="color:red" *ngIf="numTel.errors && (numTel.dirty || numTel.touched)">
-            <p *ngIf="numTel.errors.required">
-                * Numero Telephone is required
+        <b style="color: black;">Votre numéro de téléphone:</b>
+        <input  name="numTel" placeholder="+33 " [(ngModel)]="thirdStepFormulaire.numTel">
+        <div style="color:red" *ngIf="thirdStepFormulaire.numTel.length !== 5 && thirdStepFormulaire.numTel !== '0'">
+            <p >
+                * numéro de téléphone est incorrect
+                
             </p>
-        </div> -->
+        </div>
 
-        <b style="color: black;">Email</b>
-        <input type="text" name="email" [(ngModel)]="thirdStepFormulaire.email">
+        <b style="color: black;">Email:</b>
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="thirdStepFormulaire.email">
         <!-- <div style="color:red" *ngIf="email.errors && (email.dirty || email.touched)">
             <p *ngIf="email.errors.required">
                 * email is required
             </p>
         </div> -->
 
-        <button class="buttonS" (click)='switchLastStep()'> submit </button>
+        <button class="buttonS" (click)='switchLastStep()'> Je Demande Ma subvention </button>
 
     </div>
 
     <!-- last Step -->
     <div *ngIf="lastStep" style="justify-content:center" class=" vivify popInLeft delay-150 card col-lg-5 col-md-8">
+        <div style=" text-align: center;">
 
-        <h1>Un conseiller ARE vous contactera sous 48H
-            pour vous accompagner dans votre projet</h1>
+            <svg style="color: green;" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                <path
+                    d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z" />
+            </svg>
+        </div>
+
+        <br>
+        <br>
+        <h3 style="color: green; text-align: center;">Un conseiller ARE vous contactera sous 48H pour vous accompagner
+            dans votre projet</h3>
     </div>
 </div>

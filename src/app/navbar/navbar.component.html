@@ -1,8 +1,10 @@
 <div class="navv row ">
-  <div class="LOGO col-1">
-    <a style="margin-top: 28px;" href="#">LOGO</a>
+  <div class="LOGO col-2">
+    <a style="margin-top: 3px;" href="#">
+     <img src="../../../assets/images/LogoARE-PNG.png" alt="" width="50" height="49"/>
+    </a>
   </div>
-  <nav class="navbar col-7 navbar-light  navbar-expand-lg ">
+  <nav class="navbar col-10 navbar-light  navbar-expand-lg ">
 
 
     <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
@@ -12,30 +14,30 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
       <ul class="navbar-nav ml-5 mr-auto  mt-2 mt-lg-0">
-        <li class="a nav-item active line">
+        <li routerLinkActive="active" class="a nav-item line">
           
-          <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/accueil" href="#">Accueil <span class="sr-only">(current)</span></a>
         </li>
-        <li class=" a nav-item line">
-          <a class="nav-link " href="#">Notre Société</a>
+        <li routerLinkActive="active" class=" a nav-item line">
+          <a class="nav-link "  routerLink="/aboutus"   href="#">Notre Société</a>
         </li>
         <li class="nav-item dropdown line">
           <a class="nav-link dropdown-toggle dropbtn" href="#">Nos Offres <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-content">
             <li><a href="#">Isolation par l'intérieur</a></li>
-            <li><a href="#">Isolation par l'extérieur</a></li>
-            <li><a href="#">Pompre à chaleur</a></li>
+            <li><a class="nav-link "  routerLink="/isolationExterieur"  routerLinkActive="active" href="#">Isolation par l'extérieur</a></li>
+            <li><a href="#">Pompe à chaleur</a></li>
           </ul>
         </li>
         <li class="a nav-item line">
-          <a class="nav-link " href="#">Traveau à 1$ </a>
+          <a class="nav-link " href="#">Travaux à 1$ </a>
         </li>
         <li class="nav-item dropdown line">
           <a class="nav-link dropdown-toggle dropbtn" href="#">Guide <span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-content">
             <li><a href="#">Isolation </a></li>
             <li><a href="#">Chaudière</a></li>
-            <li><a href="#">Chauffages</a></li>
+            <li><a href="#">Chauffage</a></li>
             <li><a href="#">Les aides</a></li>
 
           </ul>

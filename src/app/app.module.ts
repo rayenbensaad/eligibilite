@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { IsolationExterieurComponent } from './components/isolation-exterieur/isolation-exterieur.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -41,7 +43,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavbarComponent,
     QuizComponent,
     DetailBlogComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    IsolationExterieurComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

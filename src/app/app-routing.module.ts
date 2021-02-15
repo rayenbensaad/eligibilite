@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DetailBlogComponent } from './components/detail-blog/detail-blog.component';
+import { IsolationExterieurComponent } from './components/isolation-exterieur/isolation-exterieur.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'blog',component: BlogComponent},
   {path: 'DetailBlog/:id',component: DetailBlogComponent},
   {path: 'contact',component: ContactComponent},
+  {path: 'aboutus',component: AboutusComponent},
+  {path: 'isolationExterieur',component: IsolationExterieurComponent},
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 

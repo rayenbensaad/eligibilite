@@ -1,5 +1,7 @@
-<!-- Single post-->
-<section class="section section-lg bg-default">
+<div class="page">
+
+  <!-- Single post-->
+  <section class="section section-lg bg-default">
     <!-- section wave-->
     <div class="container-wide">
       <div class="row justify-content-sm-center">
@@ -13,10 +15,21 @@
               </li>
             </ul>
             <p class="big" style="text-align: center;"> {{currentArticle.subject}}</p>
-            <img src="http://localhost:3000/uploads/{{currentArticle.picture}}" alt="" width="870" height="580"/>
+            <img src="http://localhost:3000/uploads/{{currentArticle.picture}}" alt="" width="870" height="580" />
             <article class="quote-primary">
-                <p>{{currentArticle.content}}</p>
+              <p>{{currentArticle.content}}</p>
               <p class="quote-primary-meta"><span>by</span><span class="cite"> {{currentArticle.author}}</span></p>
             </article>
-           
+
           </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Alternative-->
+  <app-footer></app-footer>
+</div>
+<!-- Global Mailform Output-->
+<div class="snackbars" id="form-output-global"></div>
