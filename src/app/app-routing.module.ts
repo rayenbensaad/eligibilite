@@ -7,6 +7,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { DetailBlogComponent } from './components/detail-blog/detail-blog.component';
 import { IsolationExterieurComponent } from './components/isolation-exterieur/isolation-exterieur.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.component';
+import { TraveauxComponent } from './components/traveaux/traveaux.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,9 @@ const routes: Routes = [
   {path: 'contact',component: ContactComponent},
   {path: 'aboutus',component: AboutusComponent},
   {path: 'isolationExterieur',component: IsolationExterieurComponent},
+  {path: 'PompeChaleur',component: PompeChaleurComponent},
+  {path: 'travaux',component: TraveauxComponent},
+
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 

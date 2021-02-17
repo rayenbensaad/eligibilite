@@ -22,6 +22,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { IsolationExterieurComponent } from './components/isolation-exterieur/isolation-exterieur.component';
 import { FooterComponent } from './footer/footer.component';
+import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.component';
 
 
 
@@ -45,7 +46,8 @@ import { FooterComponent } from './footer/footer.component';
     DetailBlogComponent,
     NotFoundComponent,
     IsolationExterieurComponent,
-    FooterComponent
+    FooterComponent,
+    PompeChaleurComponent
   ],
   imports: [
     BrowserModule,
