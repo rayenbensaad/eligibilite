@@ -407,14 +407,17 @@
         <br>
 
         <b style="color: black;">Où seront réalisés les travaux d'isolation?</b>
-        <input placeholder="code postal" name="codePostale"
-            [(ngModel)]="thirdStepFormulaire.codePostale">
-        <div style="color:red" *ngIf="thirdStepFormulaire.codePostale.length !== 5 && thirdStepFormulaire.codePostale !== ''">
-            <p >
-                * code postale est incorrect
-                
+        <input type="number" placeholder="code postal" name="codePostale"
+            [(ngModel)]="thirdStepFormulaire.codePostale" 
+            required [pattern]="codePostalPattern" #codePostale="ngModel">
+        <div  *ngIf="codePostale.errors && (codePostale.dirty || codePostale.touched)">  
+            <p style="color:red" *ngIf="codePostale.errors.required">
+                * Code Postal est obligatoire.
             </p>
-        </div>
+            <div style="color:red" *ngIf="codePostale.errors.pattern">  
+              *  Code Postal  n'est pas valid.  
+            </div>   
+          </div> 
         
         <input type="text" placeholder="Commune" name="commune" [(ngModel)]="thirdStepFormulaire.commune">
         <!-- <div style="color:red" *ngIf="commune.errors && (commune.dirty || commune.touched)">
@@ -424,31 +427,37 @@
         </div> -->
 
         <b style="color: black;">Nom & Prénom:</b>
-        <input type="text" name="nom_prenom" placeholder="Nom & Prénom" [(ngModel)]="thirdStepFormulaire.nom_prenom">
-        <!-- <div style="color:red" *ngIf="userName.errors && (userName.dirty || userName.touched)">
-            <p *ngIf="userName.errors.required">
-                * user Name is required
+        <input type="text" name="nom_prenom" placeholder="Nom & Prénom" [(ngModel)]="thirdStepFormulaire.nom_prenom"  #nom_prenom="ngModel" required>
+        <div style="color:red" *ngIf="nom_prenom.errors && (nom_prenom.dirty || nom_prenom.touched)">
+            <p *ngIf="nom_prenom.errors.required">
+                * Nom & Prenom sont obligatoire
             </p>
-        </div> -->
+        </div>
 
 
 
         <b style="color: black;">Votre numéro de téléphone:</b>
-        <input  name="numTel" placeholder="+33 " [(ngModel)]="thirdStepFormulaire.numTel">
-        <div style="color:red" *ngIf="thirdStepFormulaire.numTel.length !== 5 && thirdStepFormulaire.numTel !== '0'">
-            <p >
-                * numéro de téléphone est incorrect
-                
+        <input type="number"  name="numTel" placeholder="+33 " [(ngModel)]="thirdStepFormulaire.numTel" required [pattern]="mobNumberPattern" #numTel="ngModel">
+        <div  *ngIf="numTel.errors && (numTel.dirty || numTel.touched)">  
+            <p style="color:red" *ngIf="numTel.errors.required">
+                * Numéro de téléphone est obligatoire.
             </p>
-        </div>
+            <div style="color:red" *ngIf="numTel.errors.pattern">  
+              *  Numéro de téléphone n'est pas valid.  
+            </div>   
+          </div>  
 
         <b style="color: black;">Email:</b>
-        <input type="text" name="email" placeholder="Email" [(ngModel)]="thirdStepFormulaire.email">
-        <!-- <div style="color:red" *ngIf="email.errors && (email.dirty || email.touched)">
-            <p *ngIf="email.errors.required">
-                * email is required
-            </p>
-        </div> -->
+        <input type="text" name="email" placeholder="Email" [(ngModel)]="thirdStepFormulaire.email"
+        name="email" #email="ngModel" required  [pattern]="emailPattern">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div style="color:red" *ngIf="email.errors.required">
+              Email est obligatoire.
+            </div>
+            <div style="color:red" *ngIf="email.errors.pattern"> 
+             Email n'est pas valide.
+            </div>	
+          </div>
 
         <button class="buttonS" (click)='switchLastStep()'> Je Demande Ma subvention </button>
 

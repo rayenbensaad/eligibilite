@@ -12,6 +12,12 @@ import { FormService } from 'src/app/services/form.service';
 })
 export class QuizComponent implements OnInit {
 
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
+  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";  
+  codePostalPattern = "^[0-9]{5}$";  
+
+  validateEmail = true
+
   secondHalf = false;
   firstHalf = true;
   thirdHalf = false;
@@ -79,7 +85,7 @@ export class QuizComponent implements OnInit {
     codePostale: '',
     commune: '',
     nom_prenom: '',
-    numTel: '0',
+    numTel: '',
     email: '',
   };
 
@@ -104,7 +110,7 @@ export class QuizComponent implements OnInit {
   clickPoint(){
     
     this.point= true;
-    console.log(this.firstStepFormulaire.logement)
+   // console.log(this.firstStepFormulaire.logement)
   }
   hover1Btn() {
     if (this.firstStepFormulaire.logement !== '' && this.firstStepFormulaire.chauffage !== '' && this.firstStepFormulaire.isole.length !== 0) {
@@ -117,7 +123,7 @@ export class QuizComponent implements OnInit {
   switchSecondHalf() {
 
 
-    console.log(this.firstStepFormulaire)
+    //console.log(this.firstStepFormulaire)
     this.secondHalf = true;
     this.firstHalf = false;
     this.thirdHalf = false;
@@ -145,31 +151,31 @@ export class QuizComponent implements OnInit {
       else if (this.firstStepFormulaire.isole[index] === 'PAC') {
         this.isPac = true;
       }
-      console.log(
-        'ite' + this.isITE,
-        'iti' + this.isITI,
-        'isCave' + this.isCave,
-        'isComble' + this.isComble,
-        'isGarage' + this.isGarage,
-        'isSanitaire' + this.isSanitaire,
-        'isPac' + this.isPac,
-      )
+      // console.log(
+      //   'ite' + this.isITE,
+      //   'iti' + this.isITI,
+      //   'isCave' + this.isCave,
+      //   'isComble' + this.isComble,
+      //   'isGarage' + this.isGarage,
+      //   'isSanitaire' + this.isSanitaire,
+      //   'isPac' + this.isPac,
+      // )
 
     }
     if(this.firstStepFormulaire.isole.length>2){
       this.sizeCard=true;
-      console.log(this.sizeCard)
+      //console.log(this.sizeCard)
     }
   }
 
   hoverThirdStep(){
-    console.log(this.codePstalSaisie)
-    console.log(parseInt(this.thirdStepFormulaire.codePostale))
+    //console.log(this.codePstalSaisie)
+    //console.log(parseInt(this.thirdStepFormulaire.codePostale))
     if(parseInt(this.thirdStepFormulaire.codePostale)<10000 && parseInt(this.thirdStepFormulaire.codePostale)>99999 &&  this.thirdStepFormulaire.codePostale != null)
     {
       this.codePstalSaisie= true;
     }
-    console.log(this.codePstalSaisie)
+    //console.log(this.codePstalSaisie)
   }
 
   hover2Btn() {
@@ -195,14 +201,14 @@ export class QuizComponent implements OnInit {
 
   switchThirdStep() {
 
-    console.log(this.secondStepFormulaire)
+   // console.log(this.secondStepFormulaire)
     this.secondHalf = false;
     this.firstHalf = false;
     this.thirdHalf = true;
     this.lastStep = false;
   }
   checkValue($event) {
-    console.log($event.srcElement.checked)
+    //console.log($event.srcElement.checked)
     if ($event.srcElement.checked === true) {
       this.firstStepFormulaire.isole.push($event.target.value);
     } else if ($event.srcElement.checked === false) {
@@ -210,11 +216,11 @@ export class QuizComponent implements OnInit {
       this.firstStepFormulaire.isole.splice(index, 1);
     }
 
-    console.log(this.firstStepFormulaire.isole)
+    //console.log(this.firstStepFormulaire.isole)
 
   }
   switchLastStep() {
-    console.log(this.thirdStepFormulaire)
+    //console.log(this.thirdStepFormulaire)
    
 
     this.fullForm = {
@@ -245,38 +251,38 @@ export class QuizComponent implements OnInit {
     this.formService.create(this.fullForm)
       .subscribe(
         response => {
-          console.log(response);
+         // console.log(response);
           this.secondHalf = false;
           this.firstHalf = false;
           this.thirdHalf = false;
           this.lastStep = true;
         },
         error => {
-          console.log(error);
+          //console.log(error);
         });
 
   }
 
   onSurfaceCave(surfaceCaveValue) {
-    console.log(surfaceCaveValue);
+   // console.log(surfaceCaveValue);
     this.secondStepFormulaire.surfaceCave = surfaceCaveValue;
   }
   onSurfaceGarages(surfaceGarageValue) {
-    console.log(surfaceGarageValue);
+   // console.log(surfaceGarageValue);
     this.secondStepFormulaire.surfaceGarage = surfaceGarageValue;
   }
   onSurfaceVideSanitaire(surfaceVideSanitaireValue) {
-    console.log(surfaceVideSanitaireValue);
+    //console.log(surfaceVideSanitaireValue);
     this.secondStepFormulaire.surfaceVideSanitaire = surfaceVideSanitaireValue;
   }
 
   onChangeRevenu(deviceValue) {
-    console.log(deviceValue);
+    //console.log(deviceValue);
     this.secondStepFormulaire.revenu_annuel = deviceValue;
   }
 
   onChangeSurface(deviceValue) {
-    console.log(deviceValue);
+    //console.log(deviceValue);
     this.surface = deviceValue;
   }
 
@@ -295,18 +301,18 @@ export class QuizComponent implements OnInit {
       surface_isoler: this.surface,
     }
 
-    console.log(this.formulaire)
+    //console.log(this.formulaire)
 
 
     this.formService.create(this.formulaire)
       .subscribe(
         response => {
-          console.log(response);
+          //console.log(response);
           this.secondHalf = false;
           this.thirdHalf = true;
         },
         error => {
-          console.log(error);
+          //console.log(error);
         });
 
   }
