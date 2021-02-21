@@ -5,6 +5,11 @@
 }
 
 hr.new5 {
-    border: 1px solid green;
+    border: 1px solid #169331;
     border-radius: 5px;
   }
+
+  .box-minimal .box-minimal-icon {
+
+    color: #169331;
+}

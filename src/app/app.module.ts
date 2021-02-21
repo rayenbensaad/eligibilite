@@ -23,6 +23,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { IsolationExterieurComponent } from './components/isolation-exterieur/isolation-exterieur.component';
 import { FooterComponent } from './footer/footer.component';
 import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.component';
+import { IsolationInterieurComponent } from './components/isolation-interieur/isolation-interieur.component';
 
 
 
@@ -47,7 +48,8 @@ import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.
     NotFoundComponent,
     IsolationExterieurComponent,
     FooterComponent,
-    PompeChaleurComponent
+    PompeChaleurComponent,
+    IsolationInterieurComponent
   ],
   imports: [
     BrowserModule,

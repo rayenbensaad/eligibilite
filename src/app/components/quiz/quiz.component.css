@@ -86,13 +86,13 @@ select {
     height: 60px;
     border: none;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgb(99, 147, 236), rgb(106, 189, 236));
+    background-image: linear-gradient(to right,  rgb(1, 73, 121), rgb(106, 189, 236));
 }
 
 
 .buttonS:hover{
 
-    background-image: linear-gradient(to right,rgb(106, 189, 236) ,rgb(37, 96, 204));
+    background-image: linear-gradient(to right,rgb(106, 189, 236) ,rgb(1, 73, 121));
 }
 
 .calendar{

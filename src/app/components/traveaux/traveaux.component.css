@@ -2,3 +2,23 @@
 .table-color-header th.a{
     background-color:rgb(37, 96, 204) !important;
 }
+@media  screen and (max-width: 768px) {
+.unit{
+    display:initial !important;
+}
+}
+.toHome:hover{
+    color:  #8ec942 !important;
+    text-decoration: underline;
+
+}
+.list-marked > li:before {
+display: none;
+}
+.ico{
+    color:#169331;
+    margin-right: 10px;
+}
+.up{
+    transform: translateY(0);
+}
