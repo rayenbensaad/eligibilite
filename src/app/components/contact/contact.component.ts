@@ -11,13 +11,14 @@ export class ContactComponent implements OnInit {
   constructor(private contactService: ContactService) { }
 
   contact = {
-    nom_prenom: '',
+    nomprenom: '',
     email: '',
     subject: '',
     message: ''
   };
   submitted = false;
-
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
+  validateEmail = true;
   ngOnInit(): void {
   }
 
@@ -27,7 +28,7 @@ export class ContactComponent implements OnInit {
 
 
     const data = {
-      nom_prenom: this.contact.nom_prenom,
+      nom_prenom: this.contact.nomprenom,
       email: this.contact.email,
       subject: this.contact.subject,
       message: this.contact.message,
@@ -49,7 +50,7 @@ export class ContactComponent implements OnInit {
     newContact() {
       this.submitted = false;
       this.contact = {
-        nom_prenom: '',
+        nomprenom: '',
         email: '',
         subject: '',
         message: ''

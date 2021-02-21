@@ -1,6 +1,6 @@
 
 .table-color-header th.a{
-    background-color:rgb(37, 96, 204) !important;
+    background-color:#014979 !important;
 }
 @media  screen and (max-width: 768px) {
 .unit{
@@ -21,4 +21,9 @@ display: none;
 }
 .up{
     transform: translateY(0);
+}
+
+.table-color-header th {
+
+    background-color: #169331;
 }
