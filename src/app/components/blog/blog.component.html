@@ -7,7 +7,7 @@
     <div class="shell">
 =      <p style="color: white;" class="heading-1 breadcrumbs-custom-title">Blog</p>
       <ul class="breadcrumbs-custom-path">
-        <li><a style="color: white;" class="toHome" href="#">testez votre éligibilité</a></li>
+        <li><a style="color: white;" class="toHome" href="#">Testez votre éligibilité</a></li>
         <li style="color: white;" class="active"> Blog</li>
       </ul>
     </div>
@@ -31,7 +31,7 @@
               <div class="post-blog-caption">
                 <div class="post-blog-caption-header">
                   <ul class="post-blog-tags">
-                    <li><a class="button-tags" href="single-post.html">news</a></li>
+                    <li><a class="button-tags" href="single-post.html">Nouvelles</a></li>
                   </ul>
                   <ul class="post-blog-meta">
                     <li><span>by</span>&nbsp;<a href="about-me.html"> {{row.author}} </a></li>
@@ -54,10 +54,10 @@
         </div>
       
         <div class="col-md-12">
-          <pagination-controls class="page-item" previousLabel="Prev" nextLabel="Next" responsive="true"
+          <pagination-controls class="page-item" previousLabel="Préc" nextLabel="Suiv" responsive="true"
             (pageChange)="handlePageChange($event)"></pagination-controls>
         </div>
-        Article per Page:
+        Article par page:
         <select (change)="handlePageSizeChange($event)">
           <option *ngFor="let size of pageSizes" [ngValue]="size">
             {{ size }}
@@ -88,22 +88,13 @@
           </ul>
         </div>
         <div class="blog-aside-item">
-          <h6>About us</h6>
-          <p>We are centered on marketing, trading, transportation, and distribution of solar panels in the US and
-            around the world. Green Line is an environmentally friendly renewable energy company offering a broad
-            portfolio of technologies, products & solutions.</p><a class="button button-xs button-default-outline"
-            href="about-us.html">learn more</a>
+          <h6>Notre Société</h6>
+          <p>ARE travaille depuis plus de 10 ans dans l’isolation et est devenue experte dans l’aide à l’obtention de subventions pour les travaux de mise aux normes de transition énergétique. Donc, pour faire simple : nous connaissons la musique (administrative). Et nous connaissons aussi notre métier. Alors, avant de vous lancer seul/e dans l’aventure, parlons-en !
+
+          </p><a class="button button-xs button-default-outline"
+          routerLink="/aboutus" >Lire la suite</a>
         </div>
-        <div class="blog-aside-item">
-          <h6>categories</h6>
-          <ul class="list-marked list-marked-secondary">
-            <li><a href="#">Business</a></li>
-            <li><a href="#">Tips & Tricks</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Marketing</a></li>
-          </ul>
-        </div>
+       
       </div>
     </div>
   </div>

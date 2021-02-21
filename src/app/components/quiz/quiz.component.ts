@@ -248,6 +248,7 @@ export class QuizComponent implements OnInit {
       email: this.thirdStepFormulaire.email,
     }
 
+    console.log(this.fullForm);
     this.formService.create(this.fullForm)
       .subscribe(
         response => {
@@ -301,13 +302,13 @@ export class QuizComponent implements OnInit {
       surface_isoler: this.surface,
     }
 
-    //console.log(this.formulaire)
+    console.log(this.formulaire)
 
 
     this.formService.create(this.formulaire)
       .subscribe(
         response => {
-          //console.log(response);
+          console.log(response);
           this.secondHalf = false;
           this.thirdHalf = true;
         },
