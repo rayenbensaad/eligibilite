@@ -24,6 +24,8 @@ import { IsolationExterieurComponent } from './components/isolation-exterieur/is
 import { FooterComponent } from './footer/footer.component';
 import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.component';
 import { IsolationInterieurComponent } from './components/isolation-interieur/isolation-interieur.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { TousDroitsReservesComponent } from './components/tous-droits-reserves/tous-droits-reserves.component';
 
 
 
@@ -49,7 +51,9 @@ import { IsolationInterieurComponent } from './components/isolation-interieur/is
     IsolationExterieurComponent,
     FooterComponent,
     PompeChaleurComponent,
-    IsolationInterieurComponent
+    IsolationInterieurComponent,
+    FaqComponent,
+    TousDroitsReservesComponent
   ],
   imports: [
     BrowserModule,

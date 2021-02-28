@@ -7,6 +7,13 @@
     display:initial !important;
 }
 }
+
+@media  screen and (max-width: 500px) {
+    .list-marked{
+        padding-left: 0;
+    }
+}
+
 .toHome:hover{
     color:  #8ec942 !important;
     text-decoration: underline;
@@ -26,4 +33,8 @@ display: none;
 .table-color-header th {
 
     background-color: #169331;
+}
+.post-blog-article {
+
+    padding: 0 10px;
 }

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>ARE</title>
+  <title>Assistant Rénovation Energie</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,6 +34,30 @@
 
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/script.js"></script>
+
+  <script>
+
+    if ($(window).width() < 500) {
+
+      $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+
+    };
+  
+</script>
 
   <app-root></app-root>
 

@@ -71,11 +71,13 @@ li a:hover{
     display: block;
   }
   
+@media screen and (min-width:888px){
   .dropdown-content a:hover {background-color: #ddd;}
   
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {color: rgb(0, 128, 11);}
+}
 
 .navbar-collapse{
   background-color: white;
@@ -116,7 +118,6 @@ li a:hover{
 }
 .nav-link{
   font-family: 'Montserrat', sans-serif;
-  font-size: large;
 }
 
 .active{
@@ -142,4 +143,9 @@ li a:hover{
     text-decoration: underline;
 }
 
+}
+
+
+.dropdown-item.active{
+  background-color: transparent;
 }
