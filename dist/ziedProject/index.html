@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>ARE</title>
+  <title>Assistant Rénovation Energie</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,8 +35,32 @@
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/script.js"></script>
 
+  <script>
+
+    if ($(window).width() < 500) {
+
+      $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+
+    };
+  
+</script>
+
   <app-root></app-root>
 
-<script src="runtime-es2015.0dae8cbc97194c7caed4.js" type="module"></script><script src="runtime-es5.0dae8cbc97194c7caed4.js" nomodule defer></script><script src="polyfills-es5.7dcd60154d8f19200593.js" nomodule defer></script><script src="polyfills-es2015.562d04f94b5b0dfb5445.js" type="module"></script><script src="main-es2015.3ae8ddfe5d3e401a4d98.js" type="module"></script><script src="main-es5.3ae8ddfe5d3e401a4d98.js" nomodule defer></script></body>
+<script src="runtime-es2015.0dae8cbc97194c7caed4.js" type="module"></script><script src="runtime-es5.0dae8cbc97194c7caed4.js" nomodule defer></script><script src="polyfills-es5.7dcd60154d8f19200593.js" nomodule defer></script><script src="polyfills-es2015.562d04f94b5b0dfb5445.js" type="module"></script><script src="main-es2015.9d2b28eed8cb5032b3f5.js" type="module"></script><script src="main-es5.9d2b28eed8cb5032b3f5.js" nomodule defer></script></body>
 
 </html>
