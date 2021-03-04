@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/contact';
+const baseUrl = 'http://152.228.130.141:8000/contact';
 @Injectable({
   providedIn: 'root'
 })
