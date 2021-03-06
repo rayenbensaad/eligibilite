@@ -13,3 +13,9 @@ hr.new5 {
 
     color: #169331;
 }
+@media only screen and (max-width: 600px) {
+
+  h6 {
+    font-size: 15px !important;
+  }
+}

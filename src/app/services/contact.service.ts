@@ -13,4 +13,8 @@ export class ContactService {
   create(data): Observable<any> {
     return this.http.post(baseUrl, data);
   }
+
+  createNewsletter(data): Observable<any> {
+    return this.http.post('http://152.228.130.141:8000/newsletter', data);
+  }
 }

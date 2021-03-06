@@ -12,9 +12,9 @@ import { FormService } from 'src/app/services/form.service';
 })
 export class QuizComponent implements OnInit {
 
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"; 
-  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";  
-  codePostalPattern = "^[0-9]{5}$";  
+  emailPattern = "^[A-Za-z-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  mobNumberPattern = /^[1679]\d{8}$/;
+  codePostalPattern = "^[0-9]{5}$";
 
   validateEmail = true
 
@@ -100,7 +100,7 @@ export class QuizComponent implements OnInit {
   sizeCard=false;
   codePstalSaisie=false;
 
- 
+
 
   constructor(private formService: FormService) { }
 
@@ -108,7 +108,7 @@ export class QuizComponent implements OnInit {
 
   }
   clickPoint(){
-    
+
     this.point= true;
    // console.log(this.firstStepFormulaire.logement)
   }
@@ -119,7 +119,11 @@ export class QuizComponent implements OnInit {
     }
 
   }
-  
+
+  // ismobNumberPattern(number){
+  //  const  mobNumberPattern = /^0[1679]\d{8}$/;
+  //  return mobNumberPattern.test(this.mobNumberPattern);
+  // }
   switchSecondHalf() {
 
 
@@ -193,11 +197,11 @@ export class QuizComponent implements OnInit {
       this.SecondBTN = false;
       //console.log(this.SecondBTN)
     }
-   
+
 
   }
 
-  
+
 
   switchThirdStep() {
 
@@ -221,7 +225,7 @@ export class QuizComponent implements OnInit {
   }
   switchLastStep() {
     //console.log(this.thirdStepFormulaire)
-   
+
 
     this.fullForm = {
       logement: this.firstStepFormulaire.logement,

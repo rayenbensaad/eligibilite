@@ -1,7 +1,7 @@
 .card{
     margin-top: 100px;
     margin-left: auto;
-    margin-right: auto;   
+    margin-right: auto;
     height: auto;
     width: auto;
     padding: 30px;
@@ -10,7 +10,7 @@
     height: 1150px !important;
 }
 /* .Round1InnerShadow {
-  
+
     box-shadow: inset 0px 0px 21pt 10pt rgba(61,59,61,0.48);
     border: 1pt solid transparent;
      border-radius: 20px;
@@ -34,7 +34,7 @@ table > tr >td:hover > label > .point {
     background: white;
     transition: width 2s ease;
   }
-  
+
 
 
 input[type=radio] {
@@ -55,7 +55,7 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     border-style: hidden; /* hide standard table (collapsed) border */
-    box-shadow: 0 0 0 1px black; /* this draws the table border  */ 
+    box-shadow: 0 0 0 1px black; /* this draws the table border  */
 }
 
 input[type=text] {
@@ -117,7 +117,7 @@ select {
         margin-left: 0px ;
         width: auto;
     }
-  
+
   }
   @media (min-width: 1080px){
     .calendar{
@@ -129,8 +129,14 @@ select {
         height: 40px;
         width: 150px;
     }
-  
+
   }
 b {
     text-align: center;
 }
+svg{
+  float: right;
+  margin-top: 5px;
+  color: green;
+}
+
