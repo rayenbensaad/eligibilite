@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   newsletter = {
     email: '',
   };
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  emailPattern = "^[A-Za-z-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
 
   ngOnInit(): void {

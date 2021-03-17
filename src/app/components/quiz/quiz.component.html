@@ -6,7 +6,7 @@
             <br>
             <h5 style="text-align: right;">Etape 1 </h5>
             <br>
-            <b style="color: black;">Dans ce logement vous etes :</b>
+            <b style="color: black;">Dans ce logement vous êtes :</b>
             <table border="1">
                 <tr>
                     <td (click)=" clickPoint()"> <label >
@@ -81,10 +81,10 @@
                 <tr>
                     <td style="width: 50%;"> <label><input type="checkbox" value="ITE" id='regular' name="ITE"
                                 (change)="checkValue($event)">
-                            &nbsp;&nbsp;ITE-Isolation thermique extérieur</label></td>
+                            &nbsp;&nbsp;ITE (Isolation thermique extérieure)</label></td>
                     <td> <label><input type="checkbox" value="ITI" id='regular' name="ITI"
                                 (change)="checkValue($event)">
-                            &nbsp;&nbsp;ITI-isolation theremique intérieur</label></td>
+                            &nbsp;&nbsp;ITI (Isolation thermique intérieure)</label></td>
                 </tr>
                 <tr>
                     <td> <label><input type="checkbox" value="Sous-sol/cave" id='regular' name="Sous-sol/cave"
@@ -107,7 +107,7 @@
                 <tr>
                     <td colspan="2"> <label><input type="checkbox" value="PAC" id='regular' name="PAC"
                                 (change)="checkValue($event)">
-                            &nbsp;&nbsp;PAC-pompe à chaleur</label></td>
+                            &nbsp;&nbsp;PAC (Pompe à chaleur)</label></td>
 
 
                 </tr>
@@ -168,7 +168,7 @@
         [ngClass]="{'cardd': firstStepFormulaire.isole.length>2}">
         <h5 style="text-align: right;">Etape 2</h5>
         <br>
-        <b *ngIf="isITE" style="color: black;">ITE-Isolation thermique extérieur</b>
+        <b *ngIf="isITE" style="color: black;">ITE (Isolation thermique extérieure)</b>
         <input *ngIf="isITE" type="text" placeholder="surface de votre bien" name="ITE"
             [(ngModel)]="secondStepFormulaire.ITE" required>
         <!-- <div ngIf="ITE.errors.required">
@@ -180,8 +180,8 @@
         </div> -->
         <br *ngIf="isITE">
 
-        <b *ngIf="isITI" style="color: black;">ITI-isolation theremique intérieur</b>
-        <input *ngIf="isITI" type="text" placeholder="surface de votre bien" name="ITI"
+        <b *ngIf="isITI" style="color: black;">ITI (Isolation thermique intérieur)</b>
+        <input *ngIf="isITI" type="text" placeholder="Surface de votre bien" name="ITI"
             [(ngModel)]="secondStepFormulaire.ITI">
         <!-- <div  style="color:red" *ngIf="ITI.errors && (ITI.dirty || ITI.touched)">
             <p *ngIf="ITI.errors.required">
@@ -190,8 +190,8 @@
         </div> -->
         <br *ngIf="isITI">
 
-        <b *ngIf="isPac" style="color: black;">PAC-pompe à chaleur</b>
-        <input *ngIf="isPac" type="text" placeholder="surface de votre bien" name="PACSurface"
+        <b *ngIf="isPac" style="color: black;">PAC (Pompe à chaleur)</b>
+        <input *ngIf="isPac" type="text" placeholder="Surface de votre bien" name="PACSurface"
             [(ngModel)]="secondStepFormulaire.PACSurface">
         <!-- <div style="color:red" *ngIf="PACSurfacee.errors && (PACSurface.dirty || PACSurface.touched)">
             <p *ngIf="PACSurface.errors.required">
@@ -283,7 +283,7 @@
                       </svg>
                       <input type="radio" id='regular' value="ile de france" name="situe"
                             [(ngModel)]="secondStepFormulaire.situe">
-                        &nbsp;&nbsp;ile de france </label></td>
+                        &nbsp;&nbsp;Ile-de-France </label></td>
                 <td> <label>
                     <svg style="color: green;" *ngIf='secondStepFormulaire.situe =="autre region" ' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -291,7 +291,7 @@
                       </svg><input type="radio" id='regular' value="autre region" name="situe"
 
                             [(ngModel)]="secondStepFormulaire.situe">
-                        &nbsp;&nbsp;autre region</label></td>
+                        &nbsp;&nbsp;Autre région</label></td>
             </tr>
         </table>
         <br>
@@ -408,7 +408,7 @@
         <br>
 
         <b style="color: black;">Où seront réalisés les travaux d'isolation?</b>
-        <input type="number" placeholder="code postal" name="codePostale"
+        <input type="number" placeholder="Code postal" name="codePostale"
             [(ngModel)]="thirdStepFormulaire.codePostale"
             required [pattern]="codePostalPattern" #codePostale="ngModel">
         <div  *ngIf="codePostale.errors && (codePostale.dirty || codePostale.touched)">
@@ -438,7 +438,7 @@
 
 
         <b style="color: black;">Votre numéro de téléphone:</b>
-        <input type="number"  name="numTel" placeholder="exemple: 06876678 "
+        <input type="number"  name="numTel" placeholder="Exemple: 06876678 "
         [(ngModel)]="thirdStepFormulaire.numTel" required [pattern]="mobNumberPattern" #numTel="ngModel">
 
         <div  *ngIf="numTel.errors && (numTel.dirty || numTel.touched)">
@@ -462,7 +462,7 @@
             </div>
           </div>
 
-        <button class="buttonS" (click)='switchLastStep()'> Je Valide ma demande </button>
+        <button class="buttonS" (click)='switchLastStep()'> Je valide ma demande </button>
 
     </div>
 
