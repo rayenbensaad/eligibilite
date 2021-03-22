@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { AirAirComponent } from './components/air-air/air-air.component';
+import { AirEauComponent } from './components/air-eau/air-eau.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DetailBlogComponent } from './components/detail-blog/detail-blog.component';
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'isolationInterieur',component: IsolationInterieurComponent},
   {path: 'faq',component: FaqComponent},
   {path: 'droits',component: TousDroitsReservesComponent},
+  {path: 'air-air',component: AirAirComponent},
+  {path: 'air-eau',component: AirEauComponent},
   //{path: 'offre',component: NosoffreComponent},
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page

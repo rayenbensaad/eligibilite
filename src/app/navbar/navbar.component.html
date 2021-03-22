@@ -26,7 +26,13 @@
           <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" style="color: black;font-weight: bold;font-family: 'Montserrat', sans-serif;"  routerLink="/isolationInterieur"  routerLinkActive="active"  href="#">Isolation par l'intérieur</a></li>
             <li><a class="dropdown-item" style="color: black;font-weight: bold;font-family: 'Montserrat', sans-serif;"   routerLink="/isolationExterieur"  routerLinkActive="active" href="#">Isolation par l'extérieur</a></li>
-            <li><a class="dropdown-item" style="color: black;font-weight: bold;font-family: 'Montserrat', sans-serif;"   routerLink="/PompeChaleur"  routerLinkActive="active" href="#">Pompe à chaleur</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item" style="color: black;font-weight: bold;font-family: 'Montserrat', sans-serif;"   routerLink="/PompeChaleur" tabindex="-1"  routerLinkActive="active" href="#">Pompe à chaleur</a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item"><a tabindex="-1" routerLink="/air-air"  routerLinkActive="active" href="#">Air-Air</a></li>
+                <li class="dropdown-item"><a tabindex="-1" routerLink="/air-eau"  routerLinkActive="active" href="#">Air-Eau</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="a nav-item line">

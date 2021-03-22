@@ -26,6 +26,8 @@ import { PompeChaleurComponent } from './components/pompe-chaleur/pompe-chaleur.
 import { IsolationInterieurComponent } from './components/isolation-interieur/isolation-interieur.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TousDroitsReservesComponent } from './components/tous-droits-reserves/tous-droits-reserves.component';
+import { AirAirComponent } from './components/air-air/air-air.component';
+import { AirEauComponent } from './components/air-eau/air-eau.component';
 
 
 
@@ -53,7 +55,9 @@ import { TousDroitsReservesComponent } from './components/tous-droits-reserves/t
     PompeChaleurComponent,
     IsolationInterieurComponent,
     FaqComponent,
-    TousDroitsReservesComponent
+    TousDroitsReservesComponent,
+    AirAirComponent,
+    AirEauComponent
   ],
   imports: [
     BrowserModule,

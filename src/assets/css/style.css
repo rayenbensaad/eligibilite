@@ -6864,15 +6864,7 @@ textarea.form-input.form-input-lg {
 	background-color: #8ec942;
 }
 
-.gallery-item .caption:after {
-	position: absolute;
-	bottom: 0;
-	right: 10px;
-	content: '\f504';
-	font-family: "Material Design Icons";
-	font-size: 36px;
-	color: #ffffff;
-}
+
 
 .gallery-item .caption-title,
 .gallery-item .caption-text {

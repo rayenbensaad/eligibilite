@@ -2,3 +2,8 @@
 .card-title {
     margin-bottom: 0;
 }
+
+.breadcrumbs-custom {
+
+    background-image: url(../../../assets/images/Home_page_Isolation_par_linterieur-01.jpg);
+}
