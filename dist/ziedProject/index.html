@@ -7,7 +7,7 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Lato:300,400,300italic,700%7CMontserrat:300,400,700">
@@ -28,7 +28,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="styles.a7907b5cdf5ae33a3733.css"></head>
+<link rel="stylesheet" href="styles.90a55c16c8450405914d.css"></head>
 
 <body>
 
@@ -59,8 +59,27 @@
   
 </script>
 
+<script>
+  $(document).on('click', '.dropdown-menu', function (e) {
+  e.stopPropagation();
+});
+
+// make it as accordion for smaller screens
+if ($(window).width() < 992) {
+  $('.dropdown-menu a').click(function(e){
+    e.preventDefault();
+      if($(this).next('.submenu').length){
+        $(this).next('.submenu').toggle();
+      }
+      $('.dropdown').on('hide.bs.dropdown', function () {
+     $(this).find('.submenu').hide();
+  })
+  });
+}
+</script>
+
   <app-root></app-root>
 
-<script src="runtime-es2015.0dae8cbc97194c7caed4.js" type="module"></script><script src="runtime-es5.0dae8cbc97194c7caed4.js" nomodule defer></script><script src="polyfills-es5.7dcd60154d8f19200593.js" nomodule defer></script><script src="polyfills-es2015.562d04f94b5b0dfb5445.js" type="module"></script><script src="main-es2015.3bcc168f4e729d063e6d.js" type="module"></script><script src="main-es5.3bcc168f4e729d063e6d.js" nomodule defer></script></body>
+<script src="runtime-es2015.0dae8cbc97194c7caed4.js" type="module"></script><script src="runtime-es5.0dae8cbc97194c7caed4.js" nomodule defer></script><script src="polyfills-es5.7dcd60154d8f19200593.js" nomodule defer></script><script src="polyfills-es2015.562d04f94b5b0dfb5445.js" type="module"></script><script src="main-es2015.be48973aacf4e35c7246.js" type="module"></script><script src="main-es5.be48973aacf4e35c7246.js" nomodule defer></script></body>
 
 </html>

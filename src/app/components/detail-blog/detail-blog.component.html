@@ -1,5 +1,20 @@
 <div class="page">
 
+  <div class="fixed-top">
+    <app-navbar></app-navbar>
+  </div>
+  <header>
+    <section class="breadcrumbs-custom breadcrumbs-custom-svg">
+      <div class="shell">
+  =      <p style="color: white;" class="heading-1 breadcrumbs-custom-title">Blog</p>
+        <ul class="breadcrumbs-custom-path">
+          <li><a style="color: white;" class="toHome" href="#">Testez votre éligibilité</a></li>
+          <li style="color: white;" class="active"> Blog</li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
   <!-- Single post-->
   <section class="section section-lg bg-default">
     <!-- section wave-->
@@ -15,7 +30,7 @@
               </li>
             </ul>
             <p class="big" style="text-align: center;"> {{currentArticle.subject}}</p>
-            <img src="http://localhost:3000/uploads/{{currentArticle.picture}}" alt="" width="870" height="580" />
+            <img src="http://152.228.130.141:8000/uploads/{{currentArticle.picture}}" alt="" width="870" height="580" />
             <article class="quote-primary">
               <p>{{currentArticle.content}}</p>
               <p class="quote-primary-meta"><span>by</span><span class="cite"> {{currentArticle.author}}</span></p>

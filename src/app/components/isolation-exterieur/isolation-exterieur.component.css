@@ -16,11 +16,52 @@ hr.new5 {
 @media only screen and (max-width: 600px) {
 
   h6 {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
+
+  .gallery-item img {
+
+    transform: translateX(-5%);
+
+}
+}
+@media screen and (max-width: 991px) and (min-width: 750px) {
+  
+.box-minimal-header > * {
+    margin-left: 0; 
+}
+}
+
+@media only screen and (max-width: 400px) {
+  .gallery-item img {
+    transform: translateX(-30%);
+
+}
+}
+@media only screen and (max-width: 750px) {
+
+.pictMobile{
+  margin-left: 30px;;
+}
+.box-minimal-header > * {
+  margin-left: 20 !important; 
+}
+
 }
 
 .breadcrumbs-custom {
 
-  background-image: url(../../../assets/images/Home_page_isolation_par_lexterieur-01.jpg);
+  background-image: url(../../../assets/images/Photo.jpg);
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  figure {
+    width: 90%;
+    margin-left: 20px;
+    max-width: 0;
+  }
 }

@@ -56,6 +56,7 @@ export class QuizComponent implements OnInit {
     nom_prenom: '',
     num_tel: '',
     email: '',
+    date_rappel:''
 
   }
   firstStepFormulaire = {
@@ -87,6 +88,7 @@ export class QuizComponent implements OnInit {
     nom_prenom: '',
     numTel: '',
     email: '',
+    date_rappel:'',
   };
 
   isITE = false;
@@ -113,7 +115,7 @@ export class QuizComponent implements OnInit {
    // console.log(this.firstStepFormulaire.logement)
   }
   hover1Btn() {
-    if (this.firstStepFormulaire.logement !== '' && this.firstStepFormulaire.chauffage !== '' && this.firstStepFormulaire.isole.length !== 0) {
+    if (this.firstStepFormulaire.logement !== '' && this.firstStepFormulaire.chauffage !== '') {
 
       this.firstBTN = false
     }
@@ -127,7 +129,7 @@ export class QuizComponent implements OnInit {
   switchSecondHalf() {
 
 
-    //console.log(this.firstStepFormulaire)
+   //console.log(this.firstStepFormulaire)
     this.secondHalf = true;
     this.firstHalf = false;
     this.thirdHalf = false;
@@ -205,7 +207,7 @@ export class QuizComponent implements OnInit {
 
   switchThirdStep() {
 
-   // console.log(this.secondStepFormulaire)
+    console.log(this.secondStepFormulaire)
     this.secondHalf = false;
     this.firstHalf = false;
     this.thirdHalf = true;
@@ -231,7 +233,8 @@ export class QuizComponent implements OnInit {
       logement: this.firstStepFormulaire.logement,
       energie_chauffage: this.firstStepFormulaire.chauffage,
       isole: this.firstStepFormulaire.isole,
-      surface_ITE: this.secondStepFormulaire.ITE,
+      
+      surface_ITE: this.secondStepFormulaire.ITI,
       surface_ITI: this.secondStepFormulaire.ITI,
       surface_PAC: this.secondStepFormulaire.PACSurface,
       nombre_pieces_PAC: this.secondStepFormulaire.PACNumber,
@@ -250,13 +253,14 @@ export class QuizComponent implements OnInit {
       nom_prenom: this.thirdStepFormulaire.nom_prenom,
       num_tel: this.thirdStepFormulaire.numTel,
       email: this.thirdStepFormulaire.email,
+      date_rappel: this.thirdStepFormulaire.date_rappel,
     }
 
     console.log(this.fullForm);
     this.formService.create(this.fullForm)
       .subscribe(
         response => {
-         // console.log(response);
+          console.log(response);
           this.secondHalf = false;
           this.firstHalf = false;
           this.thirdHalf = false;
@@ -277,8 +281,11 @@ export class QuizComponent implements OnInit {
     this.secondStepFormulaire.surfaceGarage = surfaceGarageValue;
   }
   onSurfaceVideSanitaire(surfaceVideSanitaireValue) {
-    //console.log(surfaceVideSanitaireValue);
     this.secondStepFormulaire.surfaceVideSanitaire = surfaceVideSanitaireValue;
+  }
+  onDateRappel(dateRappel) {
+    //console.log(dateRappel);
+    this.thirdStepFormulaire.date_rappel = dateRappel;
   }
 
   onChangeRevenu(deviceValue) {
@@ -306,13 +313,13 @@ export class QuizComponent implements OnInit {
       surface_isoler: this.surface,
     }
 
-    console.log(this.formulaire)
+   // console.log(this.formulaire)
 
 
     this.formService.create(this.formulaire)
       .subscribe(
         response => {
-          console.log(response);
+          //console.log(response);
           this.secondHalf = false;
           this.thirdHalf = true;
         },

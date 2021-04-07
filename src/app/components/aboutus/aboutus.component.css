@@ -21,3 +21,8 @@
     margin-right: auto;
     display: block;
   }
+
+  .breadcrumbs-custom {
+
+    background-image: url(../../../assets/images/HOME_page_OFFRES-01.jpg);
+  }

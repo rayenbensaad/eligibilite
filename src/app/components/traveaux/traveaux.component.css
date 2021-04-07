@@ -12,6 +12,13 @@
     .list-marked{
         padding-left: 0;
     }
+    table-custom th:first-child, .table-custom td:first-child {
+        padding: 0;
+    }
+
+    .table-custom th, .table-custom td {
+        padding: 0;
+    }
 }
 
 .toHome:hover{
@@ -38,3 +45,8 @@ display: none;
 
     padding: 0 10px;
 }
+
+.breadcrumbs-custom {
+
+    background-image: url(../../../assets/images/HOME_page_OFFRES-01.jpg);
+  }
