@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://152.228.130.141:8000/post';
+const baseUrl = 'https://backend.assistantrenovationenergie.fr/post';
 @Injectable({
   providedIn: 'root'
 })

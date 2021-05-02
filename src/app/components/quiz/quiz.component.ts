@@ -207,7 +207,7 @@ export class QuizComponent implements OnInit {
 
   switchThirdStep() {
 
-    console.log(this.secondStepFormulaire)
+    //console.log(this.secondStepFormulaire)
     this.secondHalf = false;
     this.firstHalf = false;
     this.thirdHalf = true;
@@ -256,11 +256,11 @@ export class QuizComponent implements OnInit {
       date_rappel: this.thirdStepFormulaire.date_rappel,
     }
 
-    console.log(this.fullForm);
+    //console.log(this.fullForm);
     this.formService.create(this.fullForm)
       .subscribe(
         response => {
-          console.log(response);
+         // console.log(response);
           this.secondHalf = false;
           this.firstHalf = false;
           this.thirdHalf = false;

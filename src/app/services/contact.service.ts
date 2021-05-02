@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/contact';
+const baseUrl = 'https://backend.assistantrenovationenergie.fr/contact';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +15,6 @@ export class ContactService {
   }
 
   createNewsletter(data): Observable<any> {
-    return this.http.post('http://152.228.130.141:8000/newsletter', data);
+    return this.http.post('https://backend.assistantrenovationenergie.fr/newsletter', data);
   }
 }

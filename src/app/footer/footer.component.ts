@@ -34,11 +34,11 @@ export class FooterComponent implements OnInit {
     this.contactService.createNewsletter(data)
     .subscribe(
       response => {
-        console.log(response);
+        //console.log(response);
         this.submitted = true;
       },
       error => {
-        console.log(error);
+        //console.log(error);
       });
 
     }

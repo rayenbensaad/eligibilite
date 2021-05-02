@@ -1,25 +1,28 @@
 .imageH{
-    background-image: url('../../../assets/images/houses.png');
+    background-image: url('../../../assets/images/PHOTO-HOMEPAGE-min.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 
 }
 @media only screen and (max-width: 600px) {
     .imageH{
-        background-image: url('../../../assets/images/houses.png');
+        background-image: url('../../../assets/images/PHOTO-HOMEPAGE-min.jpg');
         background-size: cover;
+        background-position: center;
   }
 }
-@media only screen and (min-width: 768px) {
-    .imageH{
-        background-image: url('../../../assets/images/houses.png');
-        background-size: cover;
-  }
-}
+
 @media only screen and (max-width: 600px) {
 
 h2 {
     font-size: 20px !important;
+}
+.box-minimal-text{
+    text-align: center;
+}
+.box-minimal-title{
+    text-align: center;
 }
 
 }
@@ -65,4 +68,9 @@ h2:after {
 }
 .divider-default {
     background: linear-gradient(to right, #8ec942 50%, #169331 120%);
+}
+
+.this {
+    display:block;
+    margin:auto;
 }
