@@ -25,12 +25,12 @@ const routes: Routes = [
   {path: 'aboutus',component: AboutusComponent},
   {path: 'isolationExterieur',component: IsolationExterieurComponent},
   {path: 'PompeChaleur',component: PompeChaleurComponent},
-  {path: 'travaux',component: TraveauxComponent},
+  {path: 'Travaux-à-1€',component: TraveauxComponent},
   {path: 'isolationInterieur',component: IsolationInterieurComponent},
   {path: 'faq',component: FaqComponent},
   {path: 'droits',component: TousDroitsReservesComponent},
-  {path: 'air-air',component: AirAirComponent},
-  {path: 'air-eau',component: AirEauComponent},
+  {path: 'pompechaleur/air-air',component: AirAirComponent},
+  {path: 'pompechaleur/air-eau',component: AirEauComponent},
   //{path: 'offre',component: NosoffreComponent},
   { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page

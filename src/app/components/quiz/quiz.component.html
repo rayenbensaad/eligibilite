@@ -198,19 +198,20 @@
 
 
 
-        <b *ngIf="isITI || isITE" style="color: black;">Surface de votre bien</b>
+        <b *ngIf="isPac || isITI || isITE" style="color: black;">Surface de votre bien</b>
         <input *ngIf="isITI || isITE" type="text" placeholder="Surface de votre bien" name="ITI"
             [(ngModel)]="secondStepFormulaire.ITI">
 
-        <b *ngIf="isPac" style="color: black;">PAC (Pompe à chaleur)</b>
+        <!-- <b *ngIf="isPac || isITI || isITE" style="color: black;">PAC (Pompe à chaleur)</b>
         <input *ngIf="isPac" type="text" placeholder="Surface de votre bien" name="PACSurface"
-            [(ngModel)]="secondStepFormulaire.PACSurface">
+            [(ngModel)]="secondStepFormulaire.PACSurface"> -->
         <!-- <div style="color:red" *ngIf="PACSurfacee.errors && (PACSurface.dirty || PACSurface.touched)">
             <p *ngIf="PACSurface.errors.required">
                 * surface de votre bien required
             </p>
         </div> -->
 
+        <b *ngIf="isPac " style="color: black;">PAC (Pompe à chaleur)</b>
         <input *ngIf="isPac" type="number" placeholder="nombre de pieces" name="PACNumber"
             [(ngModel)]="secondStepFormulaire.PACNumber">
         <!-- <div style="color:red" *ngIf="PACNumber.errors && (PACNumberr.dirty || PACNumber.touched)">

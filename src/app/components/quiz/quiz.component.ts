@@ -236,7 +236,7 @@ export class QuizComponent implements OnInit {
       
       surface_ITE: this.secondStepFormulaire.ITI,
       surface_ITI: this.secondStepFormulaire.ITI,
-      surface_PAC: this.secondStepFormulaire.PACSurface,
+      surface_PAC: this.secondStepFormulaire.ITI,
       nombre_pieces_PAC: this.secondStepFormulaire.PACNumber,
       PACcomblesNumber: this.secondStepFormulaire.PACcomblesNumber,
       combles: this.secondStepFormulaire.combles,
